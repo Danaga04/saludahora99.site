@@ -28,7 +28,53 @@
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://api.vturb.com.br">
   
-   
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Pessoas Assistindo</title>
+    <script>
+        // Função para atualizar o número de pessoas assistindo
+        function atualizarContador(numero) {
+            document.getElementById("contador").innerText = numero + " pessoas assistindo";
+        }
+
+        // Função para gerar um número aleatório entre min e max
+        function numeroAleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Atualiza o contador com um número aleatório entre 101 e 140 a cada 3 segundos
+        window.onload = function() {
+            setInterval(function() {
+                var novoNumero = numeroAleatorio(101, 140);
+                atualizarContador(novoNumero);
+            }, 3000); // 3000 milissegundos = 3 segundos
+        };
+    </script>
+    <style>
+        /* Estilização para o contador */
+        #contador {
+            color: red; /* Altera a cor do texto para vermelho */
+            font-size: 150%; /* Aumenta a fonte em 50% */
+        }
+    </style>
+</head>
+<body>
+    <!-- Elemento onde o contador será exibido -->
+    <p id="contador"></p>
+</body>
+</html>
+
+
+
+
+
+
+ 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salud360ahora.site/">
     <meta property="og:title" content="Conteúdo Exclusivo">
