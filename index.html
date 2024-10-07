@@ -37,42 +37,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensagem</title>
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
+        body {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0;
+            height: 100vh;
+            margin: 0;
         }
-        .container {
+        .message {
             text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            font-weight: bold;
         }
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-        p {
-            font-size: 18px;
-            color: #555;
+        .message .date {
+            color: red;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Assista o vídeo até o final</h1>
-        <p>Essa apresentação sairá do ar até dia: <strong>xx/xx/xxxx</strong></p>
+    <div class="message">
+        Assista o vídeo até o final.<br>
+        Essa apresentação sairá do ar até dia: <span class="date" id="date"></span>.
     </div>
+
+    <script>
+        // Script para exibir a data atual + 7 dias
+        const dateElement = document.getElementById('date');
+        const currentDate = new Date();
+        const futureDate = new Date(currentDate.setDate(currentDate.getDate() + 7));
+        const day = String(futureDate.getDate()).padStart(2, '0');
+        const month = String(futureDate.getMonth() + 1).padStart(2, '0'); // Janeiro é 0
+        const year = futureDate.getFullYear();
+        dateElement.textContent = `${day}/${month}/${year}`;
+    </script>
 
 </body>
 </html>
-
 
 
 
