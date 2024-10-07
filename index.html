@@ -31,41 +31,45 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador de Pessoas Assistindo</title>
-    <script>
-        // Função para atualizar o número de pessoas assistindo
-        function atualizarContador(numero) {
-            document.getElementById("contador").innerText = numero + " pessoas assistindo";
-        }
-
-        // Função para gerar um número aleatório entre min e max
-        function numeroAleatorio(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        // Atualiza o contador com um número aleatório entre 101 e 140 a cada 3 segundos
-        window.onload = function() {
-            setInterval(function() {
-                var novoNumero = numeroAleatorio(101, 140);
-                atualizarContador(novoNumero);
-            }, 3000); // 3000 milissegundos = 3 segundos
-        };
-    </script>
+    <title>Mensagem</title>
     <style>
-        /* Estilização para o contador */
-        #contador {
-            color: red; /* Altera a cor do texto para vermelho */
-            font-size: 150%; /* Aumenta a fonte em 50% */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <!-- Elemento onde o contador será exibido -->
-    <p id="contador"></p>
+
+    <div class="container">
+        <h1>Assista o vídeo até o final</h1>
+        <p>Essa apresentação sairá do ar até dia: <strong>xx/xx/xxxx</strong></p>
+    </div>
+
 </body>
 </html>
 
