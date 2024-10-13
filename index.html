@@ -86,32 +86,8 @@
 
 
 <p style="margin-top: 15px;">
-  <span class="timer">621</span>&nbsp;gente mirando ahora...
+<span class="timer">672</span>&nbsp;gente mirando ahora...
 </p>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var count = 621; // Número inicial
-    var timerElement = document.querySelector('.timer');
-
-    function updateCount() {
-      // Gera um valor aleatório entre -5 e 5 para aumentar ou diminuir o número
-      var change = Math.floor(Math.random() * 11) - 5; // valor aleatório entre -5 e 5
-      count += change;
-
-      // Garante que o número não seja negativo
-      if (count < 0) {
-        count = 0;
-      }
-
-      // Atualiza o número no elemento da página
-      timerElement.textContent = count;
-    }
-
-    // Atualiza o número a cada 3 segundos
-    setInterval(updateCount, 3000);
-  });
-</script>
 
 
 
