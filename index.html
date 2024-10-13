@@ -90,26 +90,29 @@
 </p>
 
 <script>
-  var count = 621; // Número inicial
-  var timerElement = document.querySelector('.timer');
+  document.addEventListener('DOMContentLoaded', function() {
+    var count = 621; // Número inicial
+    var timerElement = document.querySelector('.timer');
 
-  function updateCount() {
-    // Gera um valor aleatório entre -5 e 5 para aumentar ou diminuir o número
-    var change = Math.floor(Math.random() * 11) - 5; // valor aleatório entre -5 e 5
-    count += change;
+    function updateCount() {
+      // Gera um valor aleatório entre -5 e 5 para aumentar ou diminuir o número
+      var change = Math.floor(Math.random() * 11) - 5; // valor aleatório entre -5 e 5
+      count += change;
 
-    // Garante que o número não seja negativo
-    if (count < 0) {
-      count = 0;
+      // Garante que o número não seja negativo
+      if (count < 0) {
+        count = 0;
+      }
+
+      // Atualiza o número no elemento da página
+      timerElement.textContent = count;
     }
 
-    // Atualiza o número no elemento da página
-    timerElement.textContent = count;
-  }
-
-  // Atualiza o número a cada 3 segundos
-  setInterval(updateCount, 3000);
+    // Atualiza o número a cada 3 segundos
+    setInterval(updateCount, 3000);
+  });
 </script>
+
 
 
 
@@ -598,6 +601,9 @@ function getParams() {
   setBackRedirect(link);
 </script>
 
-  
+
+Esse site não é afiliado ao Facebook ou qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todos as provas reais do produto e usamos resultados reais. Nós não vendemos seus e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam. Se você tiver alguma dúvida, sinta-se à vontade para usar o link de contato e falar conosco em horário comercial de Segunda a Sextas das 09h00 às 18h00. Lemos e respondemos todas as mensagens por ordem de chegada.
+CNPJ: 33.094.725/0001-45
+ 
 </body>
 </html>
