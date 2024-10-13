@@ -27,52 +27,15 @@
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://api.vturb.com.br">
-  
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Página</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: black;
-            margin: 0;
-        }
-        .message-container {
-            text-align: center; /* Centraliza o texto dentro do contêiner */
-            margin: 0 10px; /* Margem lateral leve (ajuste conforme necessário) */
-        }
-        .date {
-            color: red;
-            font-weight: bold; /* Negrito para a data */
-        }
-        p {
-            font-weight: bold; /* Negrito para o texto principal */
-        }
-    </style>
-</head>
-<body>
-    <div class="message-container">
-        <p>Assista o vídeo até o final, essa apresentação sairá do ar até dia: <span class="date" id="expiration-date"></span>!</p>
-    </div>
-    
-    <script>
-        const today = new Date();
-        const day = String(today.getDate()).padStart(2, '0');
-        const month = String(today.getMonth() + 1).padStart(2, '0'); // Janeiro é 0!
-        const year = today.getFullYear();
-        const expirationDate = `${day}/${month}/${year}`;
-        
-        document.getElementById('expiration-date').textContent = expirationDate;
-    </script>
-</body>
-</html>
 
 
 
+ 
+<div class="bar-topo" style="background:#ff0000; color: #fff; padding: 10px 0;" bis_skin_checked="1">
+<div class="container" bis_skin_checked="1">
+<script>date = new Date().toLocaleDateString(); document.write(date);</script>13/10/2024 es el último día para ver este vídeo
+</div>
+</div>
 
 
  
