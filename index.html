@@ -30,13 +30,15 @@
 
 
 
- 
-<div class="bar-topo" style="background:#ff0000; color: #fff; padding: 10px 0;" bis_skin_checked="1">
-<div class="container" bis_skin_checked="1">
-<script>date = new Date().toLocaleDateString(); document.write(date);</script>13/10/2024 es el último día para ver este vídeo
+<div class="bar-topo" style="background:#ff0000; color: #fff; padding: 10px 0; text-align: center;" bis_skin_checked="1">
+  <div class="container" bis_skin_checked="1">
+    <script>
+      var today = new Date();
+      var formattedDate = today.toLocaleDateString('pt-BR'); // Formato de data: dd/mm/yyyy
+      document.write(formattedDate + " é o último dia para assistir esse vídeo");
+    </script>
+  </div>
 </div>
-</div>
-
 
  
     <meta property="og:type" content="website">
