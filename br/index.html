@@ -49,11 +49,6 @@
       <div id="improved-chance" class="text-sm text-center text-green-400 fade-in"></div>
       <div id="generation-limit" class="text-center text-red-500 text-sm font-semibold"></div>
     </div>
-
-    <div class="bg-gray-800 p-4 rounded-xl shadow-xl fade-in">
-      <h3 class="text-lg font-semibold mb-2">Latest Draw Results</h3>
-      <div id="latest-results" class="text-sm text-gray-300">Loading...</div>
-    </div>
   </section>
 
   <!-- Footer -->
@@ -63,9 +58,6 @@
 
   <!-- Script -->
   <script>
-    const apiKey = 'KwrEhLDqRQH8tyJ3mW';
-    const resultsUrl = 'https://www.magayo.com/api/results.php';
-
     function generateFakeNumbers() {
       const nums = [];
       while (nums.length < 5) {
@@ -74,7 +66,11 @@
       }
       nums.sort((a, b) => a - b);
       const bonus = Math.floor(Math.random() * 26) + 1;
-      return { main: nums.join(' - '), bonus, improved: Math.floor(Math.random() * 20) + 70 };
+      return {
+        main: nums.join(' - '),
+        bonus,
+        improved: Math.floor(Math.random() * 20) + 70
+      };
     }
 
     function generateNumbers() {
@@ -84,38 +80,15 @@
 
       display.innerText = '';
       improved.innerText = '';
-
       spinner.classList.remove('hidden');
 
       setTimeout(() => {
         const data = generateFakeNumbers();
-        display.innerText = 🎟️ ${data.main} 🔴 ${data.bonus};
-        improved.innerText = 📈 AI Confidence Score: ${data.improved}%;
+        display.innerText = `🎟️ ${data.main} 🔴 ${data.bonus}`;
+        improved.innerText = `📈 AI Confidence Score: ${data.improved}%`;
         spinner.classList.add('hidden');
       }, 1200);
     }
-
-    async function loadLatestResults() {
-      const game = document.getElementById('lottery-select').value;
-      const resultBox = document.getElementById('latest-results');
-      try {
-        const res = await fetch(${resultsUrl}?api_key=${apiKey}&game=${game}&format=json);
-        const data = await res.json();
-
-        if (data.error === 0 && data.draw && data.draw.length > 0) {
-          const draw = data.draw[0];
-          resultBox.innerText = Last Draw: ${draw.date}\nNumbers: ${draw.main} ${draw.bonus ? '+ ' + draw.bonus : ''};
-        } else {
-          resultBox.innerText = 'Unable to fetch draw results.';
-        }
-      } catch {
-        resultBox.innerText = 'Error loading latest results.';
-      }
-    }
-
-    document.getElementById('lottery-select').addEventListener('change', loadLatestResults);
-    window.onload = loadLatestResults;
   </script>
 </body>
 </html>
-
