@@ -26,23 +26,6 @@
   <section id="dashboard" class="flex flex-col p-4 space-y-6">
     <h2 class="text-2xl font-bold text-center fade-in">Welcome 👋</h2>
 
-    <!-- Carousel -->
-    <div class="relative w-full max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl fade-in">
-      <div id="carousel-images" class="flex transition-transform duration-500">
-        <img src="/mnt/data/993-621-imagem_divulgada_pela_mass_lottery-721x450.jpg" class="w-full flex-shrink-0 object-cover" alt="Slide 1">
-        <img src="/mnt/data/images.jpg" class="w-full flex-shrink-0 object-cover" alt="Slide 2">
-        <img src="/mnt/data/loteria-americana-pode-pagar-milhoes-1673457028639_v2_450x450.png" class="w-full flex-shrink-0 object-cover" alt="Slide 3">
-        <img src="/mnt/data/44411_0C4D4A3A7C09E253.webp" class="w-full flex-shrink-0 object-cover" alt="Slide 4">
-        <img src="/mnt/data/17358_FADEECF991881794.webp" class="w-full flex-shrink-0 object-cover" alt="Slide 5">
-        <img src="/mnt/data/loteria_ganhadora_generosa_widelg.jpg" class="w-full flex-shrink-0 object-cover" alt="Slide 6">
-        <img src="/mnt/data/LOTERIA-IOWA.webp" class="w-full flex-shrink-0 object-cover" alt="Slide 7">
-        <img src="/mnt/data/loteria.webp" class="w-full flex-shrink-0 object-cover" alt="Slide 8">
-      </div>
-      <!-- Controls -->
-      <button onclick="prevSlide()" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white px-3 py-2 rounded-r hover:bg-opacity-75">&#8592;</button>
-      <button onclick="nextSlide()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white px-3 py-2 rounded-l hover:bg-opacity-75">&#8594;</button>
-    </div>
-
     <div class="bg-gray-800 p-4 rounded-xl shadow-xl fade-in">
       <h3 class="text-lg font-semibold mb-2">Select Lottery</h3>
       <select id="lottery-select" class="w-full p-2 rounded bg-gray-700 text-white">
@@ -67,6 +50,11 @@
       <div id="improved-chance" class="text-sm text-center text-green-400 fade-in"></div>
       <div id="generation-limit" class="text-center text-red-500 text-sm font-semibold"></div>
     </div>
+
+    <div class="bg-gray-800 p-4 rounded-xl shadow-xl fade-in">
+      <h3 class="text-lg font-semibold mb-2">Latest Draw Results</h3>
+      <div id="latest-results" class="text-sm text-gray-300">Loading...</div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -77,6 +65,7 @@
   <!-- Script -->
   <script>
     const apiKey = 'KwrEhLDqRQH8tyJ3mW';
+    const resultsUrl = 'https://www.magayo.com/api/results.php';
 
     function generateFakeNumbers() {
       const nums = [];
@@ -96,42 +85,37 @@
 
       display.innerText = '';
       improved.innerText = '';
+
       spinner.classList.remove('hidden');
 
       setTimeout(() => {
         const data = generateFakeNumbers();
-        display.innerText = `🎟️ ${data.main} 🔴 ${data.bonus}`;
-        improved.innerText = `📈 AI Confidence Score: ${data.improved}%`;
+        display.innerText = 🎟️ ${data.main} 🔴 ${data.bonus};
+        improved.innerText = 📈 AI Confidence Score: ${data.improved}%;
         spinner.classList.add('hidden');
       }, 1200);
     }
 
-    // Carousel logic
-    let currentSlide = 0;
-    const carousel = document.getElementById('carousel-images');
-    const totalSlides = carousel.children.length;
+    async function loadLatestResults() {
+      const game = document.getElementById('lottery-select').value;
+      const resultBox = document.getElementById('latest-results');
+      try {
+        const res = await fetch(${resultsUrl}?api_key=${apiKey}&game=${game}&format=json);
+        const data = await res.json();
 
-    function updateSlide() {
-      const offset = -currentSlide * carousel.clientWidth;
-      carousel.style.transform = `translateX(${offset}px)`;
+        if (data.error === 0 && data.draw && data.draw.length > 0) {
+          const draw = data.draw[0];
+          resultBox.innerText = Last Draw: ${draw.date}\nNumbers: ${draw.main} ${draw.bonus ? '+ ' + draw.bonus : ''};
+        } else {
+          resultBox.innerText = 'Unable to fetch draw results.';
+        }
+      } catch {
+        resultBox.innerText = 'Error loading latest results.';
+      }
     }
 
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateSlide();
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSlide();
-    }
-
-    window.addEventListener('resize', updateSlide);
-
-    // Autoplay
-    setInterval(() => {
-      nextSlide();
-    }, 4000);
+    document.getElementById('lottery-select').addEventListener('change', loadLatestResults);
+    window.onload = loadLatestResults;
   </script>
 </body>
 </html>
