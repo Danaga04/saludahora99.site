@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LottoCash - AI Lottery Predictor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-900 to-gray-800 text-white font-sans min-h-screen flex flex-col justify-between">
 
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 text-center text-2xl font-bold shadow-xl">
+    <div class="animate-pulse">🔮 LottoCash AI</div>
+  </header>
+
+  <!-- Dashboard -->
+  <section id="dashboard" class="flex flex-col p-4 space-y-6">
+    <h2 class="text-2xl font-bold text-center fade-in">Welcome 👋</h2>
+
+    <div class="bg-gray-800 p-4 rounded-xl shadow-xl fade-in">
+      <h3 class="text-lg font-semibold mb-2">Select Lottery</h3>
+      <select id="lottery-select" class="w-full p-2 rounded bg-gray-700 text-white">
+        <option value="us_powerball">Powerball</option>
+        <option value="mega_millions">Mega Millions</option>
+        <option value="cash4life">Cash for Life</option>
+      </select>
+    </div>
+
+    <div class="bg-gray-800 p-4 rounded-xl shadow-xl flex flex-col space-y-3 fade-in">
+      <h3 class="text-lg font-semibold">AI Smart Pick 🎯</h3>
+      <button onclick="generateNumbers()" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition px-4 py-2 rounded text-white font-semibold shadow-lg">
+        Generate Numbers
+      </button>
+      <div id="loading-spinner" class="hidden flex justify-center items-center mt-4">
+        <svg class="animate-spin h-8 w-8 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+        </svg>
+      </div>
+      <div id="generated-numbers" class="text-2xl font-bold text-center mt-4 fade-in"></div>
+      <div id="improved-chance" class="text-sm text-center text-green-400 fade-in"></div>
+      <div id="generation-limit" class="text-center text-red-500 text-sm font-semibold"></div>
+    </div>
+
+    <div class="bg-gray-800 p-4 rounded-xl shadow-xl fade-in">
+      <h3 class="text-lg font-semibold mb-2">Latest Draw Results</h3>
+      <div id="latest-results" class="text-sm text-gray-300">Loading...</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center text-sm py-3">
+    &copy; LottoCash 2025 - All rights reserved
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const apiKey = 'KwrEhLDqRQH8tyJ3mW';
+    const resultsUrl = 'https://www.magayo.com/api/results.php';
+
+    function generateFakeNumbers() {
+      const nums = [];
+      while (nums.length < 5) {
+        const num = Math.floor(Math.random() * 69) + 1;
+        if (!nums.includes(num)) nums.push(num);
+      }
+      nums.sort((a, b) => a - b);
+      const bonus = Math.floor(Math.random() * 26) + 1;
+      return { main: nums.join(' - '), bonus, improved: Math.floor(Math.random() * 20) + 70 };
+    }
+
+    function generateNumbers() {
+      const display = document.getElementById('generated-numbers');
+      const improved = document.getElementById('improved-chance');
+      const spinner = document.getElementById('loading-spinner');
+
+      display.innerText = '';
+      improved.innerText = '';
+
+      spinner.classList.remove('hidden');
+
+      setTimeout(() => {
+        const data = generateFakeNumbers();
+        display.innerText = `🎟️ ${data.main} 🔴 ${data.bonus}`;
+        improved.innerText = `📈 AI Confidence Score: ${data.improved}%`;
+        spinner.classList.add('hidden');
+      }, 1200);
+    }
+
+    async function loadLatestResults() {
+      const game = document.getElementById('lottery-select').value;
+      const resultBox = document.getElementById('latest-results');
+      try {
+        const res = await fetch(`${resultsUrl}?api_key=${apiKey}&game=${game}&format=json`);
+        const data = await res.json();
+
+        if (data.error === 0 && data.draw && data.draw.length > 0) {
+          const draw = data.draw[0];
+          resultBox.innerText = `Last Draw: ${draw.date}\nNumbers: ${draw.main} ${draw.bonus ? '+ ' + draw.bonus : ''}`;
+        } else {
+          resultBox.innerText = 'Unable to fetch draw results.';
+        }
+      } catch {
+        resultBox.innerText = 'Error loading latest results.';
+      }
+    }
+
+    document.getElementById('lottery-select').addEventListener('change', loadLatestResults);
+    window.onload = loadLatestResults;
+  </script>
+</body>
+</html>
