@@ -45,7 +45,8 @@
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
         </svg>
       </div>
-      <div id="generated-numbers" class="text-2xl font-bold text-center mt-4 fade-in"></div>
+      <div id="status-message" class="text-sm text-center text-blue-300 italic fade-in"></div>
+      <div id="generated-numbers" class="text-2xl font-bold text-center mt-4 fade-in whitespace-pre-line"></div>
       <div id="improved-chance" class="text-sm text-center text-green-400 fade-in"></div>
       <div id="generation-limit" class="text-center text-red-500 text-sm font-semibold"></div>
     </div>
@@ -58,36 +59,52 @@
 
   <!-- Script -->
   <script>
-    function generateFakeNumbers() {
-      const nums = [];
-      while (nums.length < 5) {
-        const num = Math.floor(Math.random() * 69) + 1;
-        if (!nums.includes(num)) nums.push(num);
+    function generateFakeNumberPool(count, max) {
+      const nums = new Set();
+      while (nums.size < count) {
+        nums.add(Math.floor(Math.random() * max) + 1);
       }
-      nums.sort((a, b) => a - b);
-      const bonus = Math.floor(Math.random() * 26) + 1;
-      return {
-        main: nums.join(' - '),
-        bonus,
-        improved: Math.floor(Math.random() * 20) + 70
-      };
+      return [...nums].sort((a, b) => a - b);
     }
 
-    function generateNumbers() {
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function generateNumbers() {
       const display = document.getElementById('generated-numbers');
       const improved = document.getElementById('improved-chance');
       const spinner = document.getElementById('loading-spinner');
+      const status = document.getElementById('status-message');
 
       display.innerText = '';
       improved.innerText = '';
+      status.innerText = '';
       spinner.classList.remove('hidden');
 
-      setTimeout(() => {
-        const data = generateFakeNumbers();
-        display.innerText = `🎟️ ${data.main} 🔴 ${data.bonus}`;
-        improved.innerText = `📈 AI Confidence Score: ${data.improved}%`;
-        spinner.classList.add('hidden');
-      }, 1200);
+      const numbers = generateFakeNumberPool(5, 69);
+      const bonus = Math.floor(Math.random() * 26) + 1;
+      const improvedScore = Math.floor(Math.random() * 6) + 93; // 93-98%
+
+      for (let i = 0; i < numbers.length; i++) {
+        status.innerText = `🔍 Analyzing number ${i + 1}...`;
+        await delay(1200 + Math.random() * 400);
+        status.innerText = `📡 Calculating probabilities...`;
+        await delay(800);
+        display.innerText += `🎯 ${numbers[i]}\n`;
+        await delay(400);
+      }
+
+      status.innerText = `🔄 Finalizing bonus number...`;
+      await delay(1500);
+      display.innerText += `🔴 Bonus: ${bonus}`;
+
+      status.innerText = `📈 Calculating AI confidence...`;
+      await delay(1000);
+      improved.innerText = `📈 AI Confidence Score: ${improvedScore}%`;
+
+      status.innerText = `✅ Done. Good luck!`;
+      spinner.classList.add('hidden');
     }
   </script>
 </body>
