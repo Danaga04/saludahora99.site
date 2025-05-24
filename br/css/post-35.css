@@ -1,0 +1,198 @@
+.elementor-35 .elementor-element.elementor-element-7d9a7049{--display:flex;--min-height:430px;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--background-transition:0.3s;}.elementor-35 .elementor-element.elementor-element-7d9a7049:not(.elementor-motion-effects-element-type-background), .elementor-35 .elementor-element.elementor-element-7d9a7049 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#00D942;}.elementor-35 .elementor-element.elementor-element-7d9a7049, .elementor-35 .elementor-element.elementor-element-7d9a7049::before{--border-transition:0.3s;}.elementor-35 .elementor-element.elementor-element-14e91264{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--background-transition:0.3s;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);}.elementor-35 .elementor-element.elementor-element-14e91264:not(.elementor-motion-effects-element-type-background), .elementor-35 .elementor-element.elementor-element-14e91264 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#FFFFFF;}.elementor-35 .elementor-element.elementor-element-14e91264, .elementor-35 .elementor-element.elementor-element-14e91264::before{--border-transition:0.3s;}.elementor-35 .elementor-element.elementor-element-6d9d1d80 .elementor-heading-title{color:#0C071D;font-family:"Chakra Petch", Sans-serif;font-weight:400;}.elementor-35 .elementor-element.elementor-element-746ee7a2{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--background-transition:0.3s;}.elementor-35 .elementor-element.elementor-element-430a270 .elementor-heading-title{color:#0C071D;font-family:"Chakra Petch", Sans-serif;font-weight:600;}@media(max-width:767px){.elementor-35 .elementor-element.elementor-element-7d9a7049{--min-height:100px;--align-items:center;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--z-index:1;}.elementor-35 .elementor-element.elementor-element-6d826782{width:var( --container-widget-width, 62px );max-width:62px;--container-widget-width:62px;--container-widget-flex-grow:0;}.elementor-35 .elementor-element.elementor-element-6d826782.elementor-element{--align-self:center;}.elementor-35 .elementor-element.elementor-element-14e91264{--width:90%;--gap:0% 0%;--border-radius:10px 10px 10px 10px;--margin-block-start:-5%;--margin-block-end:0%;--margin-inline-start:5%;--margin-inline-end:0%;--padding-block-start:30px;--padding-block-end:30px;--padding-inline-start:20px;--padding-inline-end:20px;--z-index:2;}.elementor-35 .elementor-element.elementor-element-15f5c8a4{width:var( --container-widget-width, 75% );max-width:75%;--container-widget-width:75%;--container-widget-flex-grow:0;}.elementor-35 .elementor-element.elementor-element-15f5c8a4.elementor-element{--align-self:center;}.elementor-35 .elementor-element.elementor-element-6d9d1d80{text-align:center;}.elementor-35 .elementor-element.elementor-element-6d9d1d80 .elementor-heading-title{font-size:16px;line-height:1.2em;}.elementor-35 .elementor-element.elementor-element-6d9d1d80 > .elementor-widget-container{margin:5px 0px 0px 0px;}.elementor-35 .elementor-element.elementor-element-39f6bf82 > .elementor-widget-container{margin:20px 0px 0px 0px;}.elementor-35 .elementor-element.elementor-element-682d04c5 > .elementor-widget-container{margin:20px 0px 0px 0px;}.elementor-35 .elementor-element.elementor-element-1191cd85 > .elementor-widget-container{margin:5px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-35 .elementor-element.elementor-element-4a4e9952 > .elementor-widget-container{margin:5px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-35 .elementor-element.elementor-element-1338bf78 > .elementor-widget-container{margin:5px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-35 .elementor-element.elementor-element-430a270{text-align:center;}.elementor-35 .elementor-element.elementor-element-430a270 .elementor-heading-title{font-size:16px;}.elementor-35 .elementor-element.elementor-element-430a270 > .elementor-widget-container{padding:20px 0px 20px 0px;}}/* Start custom CSS for html, class: .elementor-element-39f6bf82 */@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+#phone-form {
+  font-family: 'Chakra Petch', sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-row {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.phone-input-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 75%;
+  margin-left: 5px;
+  
+}
+
+.ddi-input-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 25%;
+  margin-right: 0px;
+  
+}
+
+.country-code-flag {
+  display: flex;
+  align-items: center; /* Isto centraliza os itens filhos verticalmente */
+  justify-content: center; /* Isto centraliza os itens filhos horizontalmente, se necessário */
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  background-color: #eee;
+  /* Outras propriedades já definidas anteriormente */
+  border-radius: 4px 0 0 4px;
+}
+
+.country-code {
+  margin-right: 5px;
+}
+
+.flag-icon {
+  font-size: 20px;
+}
+
+#phone {
+  width: 80% !important;
+  border: none;
+  margin-left: 10px;
+  font-family: 'Chakra Petch', sans-serif;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 0px;
+}
+
+#ddi {
+  flex-grow: 1;
+  border: none;
+  margin-left: 10px;
+  font-family: 'Chakra Petch', sans-serif;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 0px;
+}
+
+#phone:focus {
+  outline: none;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #01CB3E;
+  color: #0C071D;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Chakra Petch', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 700; /* Aumenta o peso da fonte para negrito */
+}
+
+
+.submit-button:hover {
+  background-color: #019a2e; /* Um tom mais escuro de verde ao passar o mouse */
+}
+
+#phone::placeholder {
+  /* Estilo para o placeholder */
+  font-size: 16px; /* Aumenta o tamanho da fonte do placeholder */
+  /* Você pode adicionar outras propriedades de estilo aqui, se necessário */
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-682d04c5 */.status-container {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  font-family: 'Chakra Petch', sans-serif;
+  /* Outras propriedades de estilo conforme necessário */
+}
+
+.blinking-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #33FF00;
+  margin-right: 5px;
+  animation: blink 1.3s infinite; /* Animação que pisca a cada segundo */
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-1191cd85 */.user-card {
+  background-color: #0C071D;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.user-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #48FC1E;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.user-info {
+  font-size: 18px;
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-4a4e9952 */.user-card {
+  background-color: #0C071D;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.user-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #48FC1E;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.user-info {
+  font-size: 18px;
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-1338bf78 */.user-card {
+  background-color: #0C071D;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.user-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #48FC1E;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.user-info {
+  font-size: 18px;
+}/* End custom CSS */
