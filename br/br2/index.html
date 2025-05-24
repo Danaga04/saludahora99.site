@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="es-LA"><head>
+<!DOCTYPE html><html lang="pt-BR"><head>
 	<meta charset="UTF-8">
-			<title>whatspy-3 – WhatSpy</title>
+			<title>whatspy-4 – WhatSpy</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>whatspy-3 – WhatSpy</title>
+<title>whatspy-4 – WhatSpy</title>
 <link rel="alternate" type="application/rss+xml" title="Feed para WhatSpy »" href="https://whatspysapps.pro/feed/">
 <link rel="alternate" type="application/rss+xml" title="Feed de comentários para WhatSpy »" href="https://whatspysapps.pro/comments/feed/">
 <script>
@@ -12,17 +12,27 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 !function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
 </script>
 
-<script src="js/latest.js" async="" defer=""></script>
-
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R3C6QSTYQF"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  // Define a constante userProfilePic com o valor desejado
+  const userProfilePic = "url_da_imagem_perfil";
 
-  gtag('config', 'G-R3C6QSTYQF');
+  // Seleciona o botão com a classe fornecida
+  const button = document.querySelector('.elementor-button');
+
+  // Adiciona um ouvinte de evento click ao botão
+  button.addEventListener('click', function() {
+      // Obtém a URL atual
+      let currentUrl = window.location.href;
+
+      // Adiciona o parâmetro UTM chamado "img" à URL com o valor da constante userProfilePic
+      let newUrl = currentUrl + (currentUrl.includes('?') ? '&' : '?') + 'utm_img=' + encodeURIComponent(userProfilePic);
+
+      // Redireciona para a próxima página com o novo parâmetro na URL
+      window.location.href = newUrl;
+  });
 </script>
+
+<script src="js/latest.js" async="" defer=""></script>
 
 
 <style id="wp-emoji-styles-inline-css">
@@ -83,14 +93,14 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <link rel="stylesheet" id="elementor-post-5-css" href="css/post-5.css" media="all">
 <link rel="stylesheet" id="elementor-pro-css" href="css/frontend-lite.min.css" media="all">
 <link rel="stylesheet" id="elementor-global-css" href="css/global.css" media="all">
-<link rel="stylesheet" id="elementor-post-35-css" href="css/post-35.css" media="all">
+<link rel="stylesheet" id="elementor-post-44-css" href="css/post-44.css" media="all">
 <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CChakra+Petch%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=swap&ver=6.5.2" media="all">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link rel="https://api.w.org/" href="https://whatspysapps.pro/wp-json/"><link rel="alternate" type="application/json" href="https://whatspysapps.pro/wp-json/wp/v2/pages/35"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://whatspysapps.pro/xmlrpc.php?rsd">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link rel="https://api.w.org/" href="https://whatspysapps.pro/wp-json/"><link rel="alternate" type="application/json" href="https://whatspysapps.pro/wp-json/wp/v2/pages/44"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://whatspysapps.pro/xmlrpc.php?rsd">
 <meta name="generator" content="WordPress 6.5.2">
-<link rel="canonical" href="https://whatspysapps.pro/whatspy-3/">
-<link rel="shortlink" href="https://whatspysapps.pro/?p=35">
-<link rel="alternate" type="application/json+oembed" href="https://whatspysapps.pro/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwhatspysapps.pro%2Fwhatspy-3%2F">
-<link rel="alternate" type="text/xml+oembed" href="https://whatspysapps.pro/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwhatspysapps.pro%2Fwhatspy-3%2F&format=xml">
+<link rel="canonical" href="https://whatspysapps.pro/whatspy-4/">
+<link rel="shortlink" href="https://whatspysapps.pro/?p=44">
+<link rel="alternate" type="application/json+oembed" href="https://whatspysapps.pro/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwhatspysapps.pro%2Fwhatspy-4%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://whatspysapps.pro/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwhatspysapps.pro%2Fwhatspy-4%2F&format=xml">
 <!-- HFCM by 99 Robots - Snippet # 1: Disable-dev -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/disable-devtool@latest" as="script">
 <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
@@ -102,713 +112,229 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 @font-face{font-family:Cardo;font-style:italic;font-weight:400;font-display:fallback;src:url('fonts/cardo_italic_400.woff2') format('woff2');}
 @font-face{font-family:Cardo;font-style:normal;font-weight:700;font-display:fallback;src:url('fonts/cardo_normal_700.woff2') format('woff2');}
 </style>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><script src="js/wp-emoji-release.min.js" defer=""></script><script src="https://whatspysapps.pro/wp-includes/js/wp-emoji-release.min.js?ver=6.5.2" defer=""></script></head>
-<body class="page-template page-template-elementor_canvas page page-id-35 wp-embed-responsive elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-35">
-			<div data-elementor-type="wp-page" data-elementor-id="35" class="elementor elementor-35" data-elementor-post-type="page">
-				<div class="elementor-element elementor-element-7d9a7049 elementor-hidden-desktop e-flex e-con-boxed e-con e-parent" data-id="7d9a7049" data-element_type="container" data-settings="{" background_background":"classic"}"="" data-core-v316-plus="true">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><script src="js/player.js" async=""></script><script src="js/wp-emoji-release.min.js" defer=""></script><script src="js/player.js" async=""></script><script src="https://whatspysapps.pro/wp-includes/js/wp-emoji-release.min.js?ver=6.5.2" defer=""></script></head>
+<body class="page-template page-template-elementor_canvas page page-id-44 wp-embed-responsive elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-44">
+			<div data-elementor-type="wp-page" data-elementor-id="44" class="elementor elementor-44" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-743b3426 elementor-hidden-desktop e-flex e-con-boxed e-con e-parent" data-id="743b3426" data-element_type="container" data-settings="{" background_background":"classic"}"="" data-core-v316-plus="true">
 					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-3abbf138 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-html" data-id="3abbf138" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-element elementor-element-2f444c13 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-html" data-id="2f444c13" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
 			<link rel="preload" href="https://cdn.jsdelivr.net/npm/disable-devtool@latest" as="script">
 <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>		</div>
 				</div>
-				<div class="elementor-element elementor-element-6d826782 elementor-widget-mobile__width-initial elementor-widget elementor-widget-image" data-id="6d826782" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-element elementor-element-7d002d26 elementor-widget-mobile__width-initial elementor-widget elementor-widget-image" data-id="7d002d26" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 			<style>/*! elementor - v3.20.0 - 26-03-2024 */
 .elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>										<img fetchpriority="high" decoding="async" width="631" height="630" src="images/WhatSpy-LogoPNG-WEBP.webp" class="attachment-large size-large wp-image-13" alt="" srcset="images/WhatSpy-LogoPNG-WEBP.webp 631w, images/WhatSpy-LogoPNG-WEBP-300x300.webp 300w, images/WhatSpy-LogoPNG-WEBP-150x150.webp 150w" sizes="(max-width: 631px) 100vw, 631px">													</div>
 				</div>
 					</div>
 				</div>
-		<div class="elementor-element elementor-element-14e91264 e-con-full elementor-hidden-desktop e-flex e-con e-parent" data-id="14e91264" data-element_type="container" data-settings="{" background_background":"classic"}"="" data-core-v316-plus="true">
-				<div class="elementor-element elementor-element-15f5c8a4 elementor-widget-mobile__width-initial elementor-widget elementor-widget-image" data-id="15f5c8a4" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-													<img decoding="async" width="286" height="176" src="images/300c0c86074f20c4ec56daecf7a0ccf0.png" class="attachment-large size-large wp-image-37" alt="">													</div>
-				</div>
-				<div class="elementor-element elementor-element-6d9d1d80 elementor-widget elementor-widget-heading" data-id="6d9d1d80" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<style>/*! elementor - v3.20.0 - 26-03-2024 */
-.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2 class="elementor-heading-title elementor-size-default">Por favor, proporcione el <strong>número</strong> de <strong>WhatsApp</strong> de la persona que desea <strong>investigar,</strong> incluyendo el <strong>código de área</strong>:</h2>		</div>
-				</div>
-				<div class="elementor-element elementor-element-39f6bf82 elementor-widget elementor-widget-html" data-id="39f6bf82" data-element_type="widget" data-widget_type="html.default">
-				<div class="elementor-widget-container">
-			<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
-<form id="phone-form">
-  <div class="form-row">
-    <div class="ddi-input-container">
-      <select id="ddi" name="ddi" required="">
-        <option value="" disabled="" selected="">PAÍS*</option>
-        <option value="93">(+93) AF</option>
-        <option value="355">(+355) AL</option>
-        <option value="213">(+213) DZ</option>
-        <option value="376">(+376) AD</option>
-        <option value="244">(+244) AO</option>
-        <option value="54">(+54) AR</option>
-        <option value="374">(+374) AM</option>
-        <option value="61">(+61) AU</option>
-        <option value="43">(+43) AT</option>
-        <option value="994">(+994) AZ</option>
-        <option value="973">(+973) BH</option>
-        <option value="880">(+880) BD</option>
-        <option value="375">(+375) BY</option>
-        <option value="32">(+32) BE</option>
-        <option value="501">(+501) BZ</option>
-        <option value="229">(+229) BJ</option>
-        <option value="975">(+975) BT</option>
-        <option value="591">(+591) BO</option>
-        <option value="387">(+387) BA</option>
-        <option value="267">(+267) BW</option>
-        <option value="55">(+55) BR</option>
-        <option value="673">(+673) BN</option>
-        <option value="359">(+359) BG</option>
-        <option value="226">(+226) BF</option>
-        <option value="257">(+257) BI</option>
-        <option value="855">(+855) KH</option>
-        <option value="237">(+237) CM</option>
-        <option value="1">(+1) CA</option>
-        <option value="238">(+238) CV</option>
-        <option value="236">(+236) CF</option>
-        <option value="235">(+235) TD</option>
-        <option value="56">(+56) CL</option>
-        <option value="86">(+86) CN</option>
-        <option value="57">(+57) CO</option>
-        <option value="269">(+269) KM</option>
-        <option value="243">(+243) CD</option>
-        <option value="242">(+242) CG</option>
-        <option value="506">(+506) CR</option>
-        <option value="385">(+385) HR</option>
-        <option value="53">(+53) CU</option>
-        <option value="357">(+357) CY</option>
-        <option value="420">(+420) CZ</option>
-        <option value="45">(+45) DK</option>
-        <option value="253">(+253) DJ</option>
-        <option value="1-809, 1-829, 1-849">(+1-809, +1-829, +1-849) DO</option>
-        <option value="670">(+670) TL</option>
-        <option value="593">(+593) EC</option>
-        <option value="20">(+20) EG</option>
-        <option value="503">(+503) SV</option>
-        <option value="240">(+240) GQ</option>
-        <option value="291">(+291) ER</option>
-        <option value="372">(+372) EE</option>
-        <option value="251">(+251) ET</option>
-        <option value="500">(+500) FK</option>
-        <option value="298">(+298) FO</option>
-        <option value="679">(+679) FJ</option>
-        <option value="358">(+358) FI</option>
-        <option value="33">(+33) FR</option>
-        <option value="241">(+241) GA</option>
-        <option value="220">(+220) GM</option>
-        <option value="995">(+995) GE</option>
-        <option value="49">(+49) DE</option>
-        <option value="233">(+233) GH</option>
-        <option value="350">(+350) GI</option>
-        <option value="30">(+30) GR</option>
-        <option value="299">(+299) GL</option>
-        <option value="502">(+502) GT</option>
-        <option value="224">(+224) GN</option>
-        <option value="245">(+245) GW</option>
-        <option value="509">(+509) HT</option>
-        <option value="504">(+504) HN</option>
-        <option value="852">(+852) HK</option>
-        <option value="36">(+36) HU</option>
-        <option value="354">(+354) IS</option>
-        <option value="91">(+91) IN</option>
-        <option value="62">(+62) ID</option>
-        <option value="98">(+98) IR</option>
-        <option value="964">(+964) IQ</option>
-        <option value="353">(+353) IE</option>
-        <option value="972">(+972) IL</option>
-        <option value="39">(+39) IT</option>
-        <option value="225">(+225) CI</option>
-        <option value="81">(+81) JP</option>
-        <option value="962">(+962) JO</option>
-        <option value="7">(+7) KZ</option>
-        <option value="254">(+254) KE</option>
-        <option value="686">(+686) KI</option>
-        <option value="965">(+965) KW</option>
-        <option value="996">(+996) KG</option>
-        <option value="856">(+856) LA</option>
-        <option value="371">(+371) LV</option>
-        <option value="961">(+961) LB</option>
-        <option value="266">(+266) LS</option>
-        <option value="231">(+231) LR</option>
-        <option value="218">(+218) LY</option>
-        <option value="423">(+423) LI</option>
-        <option value="370">(+370) LT</option>
-        <option value="352">(+352) LU</option>
-        <option value="853">(+853) MO</option>
-        <option value="389">(+389) MK</option>
-        <option value="261">(+261) MG</option>
-        <option value="265">(+265) MW</option>
-        <option value="60">(+60) MY</option>
-        <option value="960">(+960) MV</option>
-        <option value="223">(+223) ML</option>
-        <option value="356">(+356) MT</option>
-        <option value="692">(+692) MH</option>
-        <option value="222">(+222) MR</option>
-        <option value="230">(+230) MU</option>
-        <option value="262">(+262) YT</option>
-        <option value="52">(+52) MX</option>
-        <option value="691">(+691) FM</option>
-        <option value="373">(+373) MD</option>
-        <option value="377">(+377) MC</option>
-        <option value="976">(+976) MN</option>
-        <option value="382">(+382) ME</option>
-        <option value="212">(+212) MA</option>
-        <option value="258">(+258) MZ</option>
-        <option value="95">(+95) MM</option>
-        <option value="264">(+264) NA</option>
-        <option value="674">(+674) NR</option>
-        <option value="977">(+977) NP</option>
-        <option value="31">(+31) NL</option>
-        <option value="687">(+687) NC</option>
-        <option value="64">(+64) NZ</option>
-        <option value="505">(+505) NI</option>
-        <option value="227">(+227) NE</option>
-        <option value="234">(+234) NG</option>
-        <option value="683">(+683) NU</option>
-        <option value="850">(+850) KP</option>
-        <option value="47">(+47) NO</option>
-        <option value="968">(+968) OM</option>
-        <option value="92">(+92) PK</option>
-        <option value="680">(+680) PW</option>
-        <option value="970">(+970) PS</option>
-        <option value="507">(+507) PA</option>
-        <option value="675">(+675) PG</option>
-        <option value="595">(+595) PY</option>
-        <option value="51">(+51) PE</option>
-        <option value="63">(+63) PH</option>
-        <option value="48">(+48) PL</option>
-        <option value="351">(+351) PT</option>
-        <option value="974">(+974) QA</option>
-        <option value="242">(+242) CG</option>
-        <option value="40">(+40) RO</option>
-        <option value="7">(+7) RU</option>
-        <option value="250">(+250) RW</option>
-        <option value="290">(+290) SH</option>
-        <option value="1-869">(+1-869) KN</option>
-        <option value="1-758">(+1-758) LC</option>
-        <option value="508">(+508) PM</option>
-        <option value="1-784">(+1-784) VC</option>
-        <option value="685">(+685) WS</option>
-        <option value="378">(+378) SM</option>
-        <option value="239">(+239) ST</option>
-        <option value="966">(+966) SA</option>
-        <option value="221">(+221) SN</option>
-        <option value="381">(+381) RS</option>
-        <option value="248">(+248) SC</option>
-        <option value="232">(+232) SL</option>
-        <option value="65">(+65) SG</option>
-        <option value="421">(+421) SK</option>
-        <option value="386">(+386) SI</option>
-        <option value="677">(+677) SB</option>
-        <option value="252">(+252) SO</option>
-        <option value="27">(+27) ZA</option>
-        <option value="82">(+82) KR</option>
-        <option value="211">(+211) SS</option>
-        <option value="34">(+34) ES</option>
-        <option value="94">(+94) LK</option>
-        <option value="249">(+249) SD</option>
-        <option value="597">(+597) SR</option>
-        <option value="47">(+47) SJ</option>
-        <option value="268">(+268) SZ</option>
-        <option value="46">(+46) SE</option>
-        <option value="41">(+41) CH</option>
-        <option value="963">(+963) SY</option>
-        <option value="886">(+886) TW</option>
-        <option value="992">(+992) TJ</option>
-        <option value="255">(+255) TZ</option>
-        <option value="66">(+66) TH</option>
-        <option value="228">(+228) TG</option>
-        <option value="690">(+690) TK</option>
-        <option value="676">(+676) TO</option>
-        <option value="216">(+216) TN</option>
-        <option value="90">(+90) TR</option>
-        <option value="993">(+993) TM</option>
-        <option value="688">(+688) TV</option>
-        <option value="256">(+256) UG</option>
-        <option value="380">(+380) UA</option>
-        <option value="971">(+971) AE</option>
-        <option value="44">(+44) GB</option>
-        <option value="1">(+1) US</option>
-        <option value="598">(+598) UY</option>
-        <option value="998">(+998) UZ</option>
-        <option value="678">(+678) VU</option>
-        <option value="379">(+379) VA</option>
-        <option value="58">(+58) VE</option>
-        <option value="84">(+84) VN</option>
-        <option value="681">(+681) WF</option>
-        <option value="967">(+967) YE</option>
-        <option value="260">(+260) ZM</option>
-        <option value="263">(+263) ZW</option>
-    </select>
-    
-    </div>
-    <div class="phone-input-container">
-      <input type="tel" id="phone" name="phone" placeholder="Número de WhatsApp" required="">
-    </div>
-  </div>  
-  <button type="submit" class="submit-button">CLONAR WHATSAPP AHORA</button>
-</form>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('phone-form');
-  const phoneInput = document.getElementById('phone');
-  const ddiInput = document.getElementById('ddi')
-
-
-
-  // Evento de envio do formulário
-  form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
-
-    const phoneNumber = phoneInput.value.replace(/\D/g, ''); // Pega apenas os dígitos do número formatado
-    const ddiNumber = ddiInput.value.replace(/\D/g, ''); // Pega apenas os dígitos do número formatado DDI
-    const currentUrl = new URL(window.location.href);
-    const searchParams = new URLSearchParams(currentUrl.search);
-
-    searchParams.set('tel', `${ddiNumber}`+`${phoneNumber}`);
-
-    const newUrl = new URL('https://newgencompany.com/whatspy-4');
-    newUrl.search = searchParams.toString();
-
-    window.location.href = newUrl.href; // Redireciona para a nova URL
-  });
-});
-</script>		</div>
-				</div>
-				<div class="elementor-element elementor-element-682d04c5 elementor-widget elementor-widget-html" data-id="682d04c5" data-element_type="widget" data-widget_type="html.default">
+		<div class="elementor-element elementor-element-6f437d25 e-con-full elementor-hidden-desktop e-flex e-con e-parent" data-id="6f437d25" data-element_type="container" data-settings="{" background_background":"classic"}"="" data-core-v316-plus="true">
+				<div class="elementor-element elementor-element-71e56f3f elementor-widget elementor-widget-html" data-id="71e56f3f" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
 			<div class="status-container">
   <span class="blinking-dot"></span>
-  Investigaciones en curso en este momento.
+  Investigaciones en curso...
 </div>		</div>
 				</div>
-				<div class="elementor-element elementor-element-1191cd85 elementor-widget elementor-widget-html" data-id="1191cd85" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-element elementor-element-3727b278 elementor-widget elementor-widget-html" data-id="3727b278" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<div class="user-card">
+  <div class="user-photo" style="background-image: url(" https:="" i.postimg.cc="" 2jwfwvr9="" 08.png");"=""></div>
+  <div class="user-info">+55 11 9XXXX-XXXX</div>
+</div>
+		</div>
+				</div>
+				<div class="elementor-element elementor-element-18efd06e elementor-widget elementor-widget-html" data-id="18efd06e" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
 			<script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Gerar quatro dígitos aleatórios para o número de telefone
-  const randomDigits = () => Math.floor(Math.random() * 9000) + 1000;
-
-  // URLs das imagens atualizadas
-  const userImages = [
-    'https://i.postimg.cc/dtjLv0NW/alice-oliveira-Copia.png',
-    'https://i.postimg.cc/rFSbyD4t/amanda-giulia-Copia.png',
-    'https://i.postimg.cc/zfP22Ws4/amanda-vitoria.jpg',
-    'https://i.postimg.cc/DwvC2BFt/ana.png',
-    'https://i.postimg.cc/GhqFjrw5/andressa-Copia.jpg',
-    'https://i.postimg.cc/BnjKcKCj/barbara-Copia.png',
-    'https://i.postimg.cc/63f25LBm/barbara.jpg',
-    'https://i.postimg.cc/15k92VQn/beatriz-olvier.png',
-    'https://i.postimg.cc/d0HQWHtv/bianca-olive.png',
-    'https://i.postimg.cc/mZMRM2MT/biancar-saraiva.png',
-    'https://i.postimg.cc/mkS5wqBy/bruna-silva.jpg',
-    'https://i.postimg.cc/Kc7wxKB3/bruna-silva2.png',
-    'https://i.postimg.cc/cLCbRXjf/camila-fernanda.png',
-    'https://i.postimg.cc/50dKM1tm/camila-taina-Copia.jpg',
-    'https://i.postimg.cc/02Wty7Qj/camila.jpg',
-    'https://i.postimg.cc/vBshNzPq/carolbueno.jpg',
-    'https://i.postimg.cc/PrR4jh38/caroline.png',
-    'https://i.postimg.cc/XqXCHB01/cecilia.png',
-    'https://i.postimg.cc/yYZJDH6R/daiane.jpg',
-    'https://i.postimg.cc/7YGBbfTN/daine.png',
-    'https://i.postimg.cc/nhKGQ7Vq/danielli.jpg',
-    'https://i.postimg.cc/Zq77C3jV/eduarda-silva.png',
-    'https://i.postimg.cc/g0J4FjdR/elisa.png',
-    'https://i.postimg.cc/7hMSTrww/eliza-oliver.png',
-    'https://i.postimg.cc/6pS4qpnC/emanuelle.jpg',
-    'https://i.postimg.cc/GpdwkkFR/emilly-ta.jpg',
-    'https://i.postimg.cc/Bvqk8J3Q/emily-silva.jpg',
-    'https://i.postimg.cc/mZzLZyVp/fernanda-gabriela.jpg',
-    'https://i.postimg.cc/BQ0rWTzK/fernanda-lima.png',
-    'https://i.postimg.cc/BvkzmHDt/fernanda-silva.jpg',
-    'https://i.postimg.cc/bwvF839s/giovanna-freitas.png',
-    'https://i.postimg.cc/7h8ZrCvZ/GIOVANNA-TRINDADE.png',
-    'https://i.postimg.cc/Y9NJjjG9/giulia-serena.png',
-    'https://i.postimg.cc/52HTLsYD/isa.jpg',
-    'https://i.postimg.cc/V6FVmTp0/isabel.png',
-    'https://i.postimg.cc/qqbDCKkk/isabella-eduardo.jpg',
-    'https://i.postimg.cc/HWhtXdws/jenifer.png',
-    'https://i.postimg.cc/PJwvmsHP/julia-carvalho.png',
-    'https://i.postimg.cc/5t4K91d5/julia-santos.jpg',
-    'https://i.postimg.cc/XY3Qx3JM/julia-sants.png',
-    'https://i.postimg.cc/2S2FwZMv/julia.jpg',
-    'https://i.postimg.cc/R02tsQR3/juliana-luna.jpg',
-    'https://i.postimg.cc/wjvs9b4y/kamilly.jpg',
-    'https://i.postimg.cc/j2SRyB7y/lais-silvaa.png',
-    'https://i.postimg.cc/s2CyTMWj/laura-silva.png',
-    'https://i.postimg.cc/htTRQK5H/leticia-oliveira.png',
-    'https://i.postimg.cc/MTcCxxVP/luiza.jpg',
-    'https://i.postimg.cc/kXtgw3Hy/maite.png',
-    'https://i.postimg.cc/zBbGQsB5/manu-silveira.png',
-    'https://i.postimg.cc/DzD21xcN/manuela-carvalho.png',
-    'https://i.postimg.cc/G2G1GdtB/mari-ta.png',
-    'https://i.postimg.cc/7Zh8Xgbr/maria-cecilia.jpg',
-    'https://i.postimg.cc/bJj5XbYJ/Maria-eduarda.png',
-    'https://i.postimg.cc/NMzr98yG/mariane.png',
-    'https://i.postimg.cc/CM9m9kvV/michelle.png',
-    'https://i.postimg.cc/y63ThW7p/milena.png',
-    'https://i.postimg.cc/9M7q9RyG/mirela.png',
-    'https://i.postimg.cc/sXdgtnZh/monica.png',
-    'https://i.postimg.cc/0Qn1cZGx/nicole-refrigues.png',
-    'https://i.postimg.cc/CKVy09mS/nina.jpg',
-    'https://i.postimg.cc/nrW5PWX8/olviia.png',
-    'https://i.postimg.cc/50NRNJvd/rebeca-g.png',
-    'https://i.postimg.cc/pVS6xgL4/rebeca-soares.jpg',
-    'https://i.postimg.cc/zvHpVGGM/roberta.jpg',
-    'https://i.postimg.cc/x1Pr0t7m/sabrina.png',
-    'https://i.postimg.cc/SN718jrF/sabrinasaraiva.jpg',
-    'https://i.postimg.cc/jqyM0CBw/sara-ate.png',
-    'https://i.postimg.cc/dQRjNpTG/sophia-escarella.png',
-    'https://i.postimg.cc/KjQLcXnV/srena.png',
-    'https://i.postimg.cc/yx6gbfwT/valeria.png',
-    'https://i.postimg.cc/0yK6FKHh/yasmin.jpg',
-    'https://i.postimg.cc/L4f2cBHt/84ff5d4969b1b130975ee331269614c6.jpg',
-    'https://i.postimg.cc/cJrNXf98/336uwqis1lkw8.webp',
-    'https://i.postimg.cc/QxhGv2YD/images-1.jpg',
-    'https://i.postimg.cc/ZKVg2CyP/images-2.jpg',
-    'https://i.postimg.cc/05CHKbZg/images-3.jpg',
-    'https://i.postimg.cc/xC2tc2zT/images-4.jpg',
-    'https://i.postimg.cc/qMRQtQzn/images.jpg',
-    'https://i.postimg.cc/QN6Jr50M/ocaraperfeitohahahahaha1.jpg',
-    'https://i.postimg.cc/V6k07ZyW/portaldoholanda-portaldoholanda-portaldoholanda-whatsappimage2022-11-11at74356pm-1191112-1191112-119.jpg',
-    'https://i.postimg.cc/JnSJG3g3/reproducao-facebook.jpg',
-    'https://i.postimg.cc/MpGTJM3z/rod-smith-1389357818829-300x300.jpg',
-    'https://i.postimg.cc/j2XsGtzW/selfie-foto-masculina6.webp',
-    'https://i.postimg.cc/Kv0GfcGw/transferir.jpg'
-  ];
-
-  // Função para embaralhar o array de imagens
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // troca de elementos
-    }
-  }
-
-  // Embaralhar o array de imagens para garantir aleatoriedade
-  shuffleArray(userImages);
-
-  // Obter todos os elementos com a classe .user-photo e .user-info
+  const queryParams = new URLSearchParams(window.location.search);
+  const telParam = queryParams.get('tel'); // Pega o valor da UTM 'tel'
+  const defaultUserImage = 'https://i.postimg.cc/2jWFwvR9/08.png';
   const userPhotos = document.querySelectorAll('.user-photo');
+
+  // Função para formatar o número de telefone
+  const formatTel = (tel) => {
+    if (!tel || tel.length < 10) return '+55 11 9XXXX-XXXX'; // Retorno padrão se não houver tel ou for muito curto
+    const countryCode = tel.substring(0, 2); // '+55'
+    const areaCode = tel.substring(2, 4); // '11'
+    const needsNine = (tel.length === 10 || tel[4] !== '9');
+    const firstPart = needsNine ? '9' + tel.substring(4, 8) : tel.substring(4, 9); // Adiciona '9' se necessário
+    const secondPart = needsNine ? tel.substring(8) : tel.substring(9); // Ajusta índice baseado em needsNine
+    return `+${countryCode} ${areaCode} ${firstPart}-${secondPart}`;
+  };
+
+  // Atualiza os elementos com a classe 'user-info' com o telefone formatado
   const userInfos = document.querySelectorAll('.user-info');
+  userInfos.forEach(userInfo => {
+    userInfo.textContent = formatTel(telParam);
+  });
 
-  // Assegurar que haja imagens suficientes para os elementos disponíveis
-  if (userPhotos.length > userImages.length) {
-    console.error("Não há imagens suficientes para todos os elementos .user-photo!");
-    return;
+  // Adiciona o estado de carregamento
+  userPhotos.forEach(userPhoto => userPhoto.classList.add('loading'));
+
+  // Se 'tel' existir na URL, faz a requisição para a API
+  if (telParam) {
+    fetch(`https://whatsapp-data1.p.rapidapi.com/number/${telParam}`, {
+  method: 'GET',
+  headers: {
+              "X-Rapidapi-Host": "whatsapp-data1.p.rapidapi.com",
+              "X-Rapidapi-Key": "9afbc16e20mshdf9f8a7157df191p19744ajsn78df9e7285fa",
+              Origin: "https://descobriendolaverdad.com",
+                Referer: "https://descobriendolaverdad.com",
+  },
+})
+.then(response => {
+  if (!response.ok) throw new Error('Network response was not ok');
+  return response.json();
+})
+    .then(data => {
+      const userProfilePic = data.profilePic || defaultUserImage;
+      userPhotos.forEach(userPhoto => {
+        userPhoto.style.backgroundImage = `url('${userProfilePic}')`;
+        userPhoto.classList.remove('loading'); // Remove o indicador de carregamento
+      });
+    })
+    .catch(error => {
+      console.error('Fetch error:', error);
+      userPhotos.forEach(userPhoto => {
+        userPhoto.style.backgroundImage = `url('${defaultUserImage}')`;
+        userPhoto.classList.remove('loading'); // Remove o indicador de carregamento
+      });
+    });
+  } else {
+    // Se não houver parâmetro 'tel', remove o carregamento e usa a imagem padrão
+    userPhotos.forEach(userPhoto => {
+      userPhoto.style.backgroundImage = `url('${defaultUserImage}')`;
+      userPhoto.classList.remove('loading');
+    });
   }
-
-  // Loop por cada cartão de usuário para atribuir imagens e números de telefone únicos
-  userPhotos.forEach((userPhoto, index) => {
-    // Atribuir uma imagem de fundo única para cada .user-photo
-    userPhoto.style.backgroundImage = `url('${userImages[index]}')`;
-  });
-
-  userInfos.forEach((userInfo, index) => {
-    // Gerar e atribuir um número de telefone aleatório para cada .user-info
-    userInfo.textContent = `+56 11 9${randomDigits()}-****`;
-  });
 });
 </script>
-
-<!-- Estrutura do cartão de usuário -->
-<div class="user-card">
-  <div class="user-photo" style="background-image: url(" https:="" i.postimg.cc="" 50dkm1tm="" camila-taina-copia.jpg");"="" sn718jrf="" sabrinasaraiva.jpg");"=""></div>
-  <div class="user-info">+54 51 94440-****</div>
-</div>
-<!-- Repita a estrutura acima para cada cartão de usuário que desejar adicionar -->
 		</div>
 				</div>
-				<div class="elementor-element elementor-element-4a4e9952 elementor-widget elementor-widget-html" data-id="4a4e9952" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-element elementor-element-46b798dc elementor-widget elementor-widget-html" data-id="46b798dc" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<div style="overflow: hidden; border-radius: 10px; width: 100%; max-width: 640px; margin: auto;">
+        <div id="vid_674393d76fbe5b000a16c2b5" style="position: relative; width: 100%; padding: 56.25% 0 0;"> <img id="thumb_674393d76fbe5b000a16c2b5" src="images/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_674393d76fbe5b000a16c2b5" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_674393d76fbe5b000a16c2b5"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/e4ce5a83-6e16-48a5-92ca-8f105430b930/players/674393d76fbe5b000a16c2b5/player.js", s.async=!0,document.head.appendChild(s);  </script>
+</div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7b563feb elementor-widget elementor-widget-html" data-id="7b563feb" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
 			<script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Gerar um DDD aleatório do Brasil
-  const brazilianDDDs = ['11', '12', '13', '14', '15', '16', '17', '18', '19', '21', '22', '24', '27', '28', '31', '32', '33', '34', '35', '37', '38', '41', '42', '43', '44', '45', '46', '47', '48', '49', '51', '53', '54', '55', '61', '62', '63', '64', '65', '66', '67', '68', '69', '71', '73', '74', '75', '77', '79', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
-  const randomDDD = () => brazilianDDDs[Math.floor(Math.random() * brazilianDDDs.length)];
+  let currentStep = 1;
+  const waitTimesBefore = [0, 1, 1, 1, 1, 1, 1, 1]; // Tempos de espera antes de mostrar cada item
+  const waitTimesAfter = [0, 15, 15, 15, 15, 15, 15, 25]; // Tempos de espera antes de marcar como completo
+  
+  function completeItem(item, isLast) {
+    const icon = item.querySelector('.status-icon');
+    icon.innerHTML = '<i class="fas fa-check"></i>';
+    icon.classList.add('completed');
+    icon.classList.remove('pulsing'); // Remove a classe de pulsação
 
-  // Gerar quatro dígitos aleatórios para o número de telefone
-  const randomDigits = () => Math.floor(Math.random() * 9000) + 1000;
-
-  // URLs das imagens atualizadas
-  const userImages = [
-    'https://i.postimg.cc/dtjLv0NW/alice-oliveira-Copia.png',
-    'https://i.postimg.cc/rFSbyD4t/amanda-giulia-Copia.png',
-    'https://i.postimg.cc/zfP22Ws4/amanda-vitoria.jpg',
-    'https://i.postimg.cc/DwvC2BFt/ana.png',
-    'https://i.postimg.cc/GhqFjrw5/andressa-Copia.jpg',
-    'https://i.postimg.cc/BnjKcKCj/barbara-Copia.png',
-    'https://i.postimg.cc/63f25LBm/barbara.jpg',
-    'https://i.postimg.cc/15k92VQn/beatriz-olvier.png',
-    'https://i.postimg.cc/d0HQWHtv/bianca-olive.png',
-    'https://i.postimg.cc/mZMRM2MT/biancar-saraiva.png',
-    'https://i.postimg.cc/mkS5wqBy/bruna-silva.jpg',
-    'https://i.postimg.cc/Kc7wxKB3/bruna-silva2.png',
-    'https://i.postimg.cc/cLCbRXjf/camila-fernanda.png',
-    'https://i.postimg.cc/50dKM1tm/camila-taina-Copia.jpg',
-    'https://i.postimg.cc/02Wty7Qj/camila.jpg',
-    'https://i.postimg.cc/vBshNzPq/carolbueno.jpg',
-    'https://i.postimg.cc/PrR4jh38/caroline.png',
-    'https://i.postimg.cc/XqXCHB01/cecilia.png',
-    'https://i.postimg.cc/yYZJDH6R/daiane.jpg',
-    'https://i.postimg.cc/7YGBbfTN/daine.png',
-    'https://i.postimg.cc/nhKGQ7Vq/danielli.jpg',
-    'https://i.postimg.cc/Zq77C3jV/eduarda-silva.png',
-    'https://i.postimg.cc/g0J4FjdR/elisa.png',
-    'https://i.postimg.cc/7hMSTrww/eliza-oliver.png',
-    'https://i.postimg.cc/6pS4qpnC/emanuelle.jpg',
-    'https://i.postimg.cc/GpdwkkFR/emilly-ta.jpg',
-    'https://i.postimg.cc/Bvqk8J3Q/emily-silva.jpg',
-    'https://i.postimg.cc/mZzLZyVp/fernanda-gabriela.jpg',
-    'https://i.postimg.cc/BQ0rWTzK/fernanda-lima.png',
-    'https://i.postimg.cc/BvkzmHDt/fernanda-silva.jpg',
-    'https://i.postimg.cc/bwvF839s/giovanna-freitas.png',
-    'https://i.postimg.cc/7h8ZrCvZ/GIOVANNA-TRINDADE.png',
-    'https://i.postimg.cc/Y9NJjjG9/giulia-serena.png',
-    'https://i.postimg.cc/52HTLsYD/isa.jpg',
-    'https://i.postimg.cc/V6FVmTp0/isabel.png',
-    'https://i.postimg.cc/qqbDCKkk/isabella-eduardo.jpg',
-    'https://i.postimg.cc/HWhtXdws/jenifer.png',
-    'https://i.postimg.cc/PJwvmsHP/julia-carvalho.png',
-    'https://i.postimg.cc/5t4K91d5/julia-santos.jpg',
-    'https://i.postimg.cc/XY3Qx3JM/julia-sants.png',
-    'https://i.postimg.cc/2S2FwZMv/julia.jpg',
-    'https://i.postimg.cc/R02tsQR3/juliana-luna.jpg',
-    'https://i.postimg.cc/wjvs9b4y/kamilly.jpg',
-    'https://i.postimg.cc/j2SRyB7y/lais-silvaa.png',
-    'https://i.postimg.cc/s2CyTMWj/laura-silva.png',
-    'https://i.postimg.cc/htTRQK5H/leticia-oliveira.png',
-    'https://i.postimg.cc/MTcCxxVP/luiza.jpg',
-    'https://i.postimg.cc/kXtgw3Hy/maite.png',
-    'https://i.postimg.cc/zBbGQsB5/manu-silveira.png',
-    'https://i.postimg.cc/DzD21xcN/manuela-carvalho.png',
-    'https://i.postimg.cc/G2G1GdtB/mari-ta.png',
-    'https://i.postimg.cc/7Zh8Xgbr/maria-cecilia.jpg',
-    'https://i.postimg.cc/bJj5XbYJ/Maria-eduarda.png',
-    'https://i.postimg.cc/NMzr98yG/mariane.png',
-    'https://i.postimg.cc/CM9m9kvV/michelle.png',
-    'https://i.postimg.cc/y63ThW7p/milena.png',
-    'https://i.postimg.cc/9M7q9RyG/mirela.png',
-    'https://i.postimg.cc/sXdgtnZh/monica.png',
-    'https://i.postimg.cc/0Qn1cZGx/nicole-refrigues.png',
-    'https://i.postimg.cc/CKVy09mS/nina.jpg',
-    'https://i.postimg.cc/nrW5PWX8/olviia.png',
-    'https://i.postimg.cc/50NRNJvd/rebeca-g.png',
-    'https://i.postimg.cc/pVS6xgL4/rebeca-soares.jpg',
-    'https://i.postimg.cc/zvHpVGGM/roberta.jpg',
-    'https://i.postimg.cc/x1Pr0t7m/sabrina.png',
-    'https://i.postimg.cc/SN718jrF/sabrinasaraiva.jpg',
-    'https://i.postimg.cc/jqyM0CBw/sara-ate.png',
-    'https://i.postimg.cc/dQRjNpTG/sophia-escarella.png',
-    'https://i.postimg.cc/KjQLcXnV/srena.png',
-    'https://i.postimg.cc/yx6gbfwT/valeria.png',
-    'https://i.postimg.cc/0yK6FKHh/yasmin.jpg',
-    'https://i.postimg.cc/L4f2cBHt/84ff5d4969b1b130975ee331269614c6.jpg',
-    'https://i.postimg.cc/cJrNXf98/336uwqis1lkw8.webp',
-    'https://i.postimg.cc/QxhGv2YD/images-1.jpg',
-    'https://i.postimg.cc/ZKVg2CyP/images-2.jpg',
-    'https://i.postimg.cc/05CHKbZg/images-3.jpg',
-    'https://i.postimg.cc/xC2tc2zT/images-4.jpg',
-    'https://i.postimg.cc/qMRQtQzn/images.jpg',
-    'https://i.postimg.cc/QN6Jr50M/ocaraperfeitohahahahaha1.jpg',
-    'https://i.postimg.cc/V6k07ZyW/portaldoholanda-portaldoholanda-portaldoholanda-whatsappimage2022-11-11at74356pm-1191112-1191112-119.jpg',
-    'https://i.postimg.cc/JnSJG3g3/reproducao-facebook.jpg',
-    'https://i.postimg.cc/MpGTJM3z/rod-smith-1389357818829-300x300.jpg',
-    'https://i.postimg.cc/j2XsGtzW/selfie-foto-masculina6.webp',
-    'https://i.postimg.cc/Kv0GfcGw/transferir.jpg'
-  ];
-
-  // Função para embaralhar o array de imagens
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // troca de elementos
+    if (isLast) {
+      const button = document.querySelector('.elementor-widget-button');
+      button.style.display = 'block'; // Mostra o botão
     }
   }
+  
+  function showNextItem() {
+    if (currentStep >= 8) return;
 
-  // Embaralhar o array de imagens para garantir aleatoriedade
-  shuffleArray(userImages);
+    const nextItem = document.querySelectorAll('.progress-item')[currentStep];
+    setTimeout(() => {
+      if (nextItem) {
+        nextItem.style.display = 'flex'; // Mostra o próximo item
+        const icon = nextItem.querySelector('.status-icon');
+        icon.classList.add('pulsing'); // Adiciona a classe de pulsação
 
-  // Obter todos os elementos com a classe .user-photo e .user-info
-  const userPhotos = document.querySelectorAll('.user-photo');
-  const userInfos = document.querySelectorAll('.user-info');
-
-  // Assegurar que haja imagens suficientes para os elementos disponíveis
-  if (userPhotos.length > userImages.length) {
-    console.error("Não há imagens suficientes para todos os elementos .user-photo!");
-    return;
+        // Espera um tempo específico antes de marcar como completo
+        setTimeout(() => {
+          completeItem(nextItem, currentStep === 7); // Passa verdadeiro se for o último item
+          currentStep++;
+          showNextItem(); // Chama a próxima etapa após marcar como completo
+        }, waitTimesAfter[currentStep] * 1000);
+      }
+    }, waitTimesBefore[currentStep] * 1000);
   }
+  
+  showNextItem(); // Inicia o processo com o segundo item
 
-  // Loop por cada cartão de usuário para atribuir imagens e números de telefone únicos
-  userPhotos.forEach((userPhoto, index) => {
-    // Atribuir uma imagem de fundo única para cada .user-photo
-    userPhoto.style.backgroundImage = `url('${userImages[index]}')`;
-  });
-
-  userInfos.forEach((userInfo, index) => {
-    // Gerar e atribuir um número de telefone aleatório para cada .user-info
-    userInfo.textContent = `+51 ${randomDDD()} 9${randomDigits()}-****`;
-  });
+  // Configura o clique do botão para redirecionar
+  const button = document.querySelector('.elementor-button-wrapper a');
+  if (button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      const currentUrl = new URL(window.location.href);
+      currentUrl.pathname = 'whatspy-5';
+      window.location.href = currentUrl.toString();
+    });
+  }
 });
-</script>
 
-<!-- Estrutura do cartão de usuário -->
-<div class="user-card">
-  <div class="user-photo" style="background-image: url(" https:="" i.postimg.cc="" cm9m9kvv="" michelle.png");"="" qqbdckkk="" isabella-eduardo.jpg");"=""></div>
-  <div class="user-info">+54 49 92848-****</div>
-</div>
-<!-- Repita a estrutura acima para cada cartão de usuário que desejar adicionar -->
-		</div>
+</script>		</div>
 				</div>
-				<div class="elementor-element elementor-element-1338bf78 elementor-widget elementor-widget-html" data-id="1338bf78" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-element elementor-element-4fb9aefc elementor-widget elementor-widget-html" data-id="4fb9aefc" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Gerar um DDD aleatório do Brasil
-  const brazilianDDDs = ['11', '12', '13', '14', '15', '16', '17', '18', '19', '21', '22', '24', '27', '28', '31', '32', '33', '34', '35', '37', '38', '41', '42', '43', '44', '45', '46', '47', '48', '49', '51', '53', '54', '55', '61', '62', '63', '64', '65', '66', '67', '68', '69', '71', '73', '74', '75', '77', '79', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
-  const randomDDD = () => brazilianDDDs[Math.floor(Math.random() * brazilianDDDs.length)];
+			<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/all.min.css">
 
-  // Gerar quatro dígitos aleatórios para o número de telefone
-  const randomDigits = () => Math.floor(Math.random() * 9000) + 1000;
-
-  // URLs das imagens atualizadas
-  const userImages = [
-    'https://i.postimg.cc/dtjLv0NW/alice-oliveira-Copia.png',
-    'https://i.postimg.cc/rFSbyD4t/amanda-giulia-Copia.png',
-    'https://i.postimg.cc/zfP22Ws4/amanda-vitoria.jpg',
-    'https://i.postimg.cc/DwvC2BFt/ana.png',
-    'https://i.postimg.cc/GhqFjrw5/andressa-Copia.jpg',
-    'https://i.postimg.cc/BnjKcKCj/barbara-Copia.png',
-    'https://i.postimg.cc/63f25LBm/barbara.jpg',
-    'https://i.postimg.cc/15k92VQn/beatriz-olvier.png',
-    'https://i.postimg.cc/d0HQWHtv/bianca-olive.png',
-    'https://i.postimg.cc/mZMRM2MT/biancar-saraiva.png',
-    'https://i.postimg.cc/mkS5wqBy/bruna-silva.jpg',
-    'https://i.postimg.cc/Kc7wxKB3/bruna-silva2.png',
-    'https://i.postimg.cc/cLCbRXjf/camila-fernanda.png',
-    'https://i.postimg.cc/50dKM1tm/camila-taina-Copia.jpg',
-    'https://i.postimg.cc/02Wty7Qj/camila.jpg',
-    'https://i.postimg.cc/vBshNzPq/carolbueno.jpg',
-    'https://i.postimg.cc/PrR4jh38/caroline.png',
-    'https://i.postimg.cc/XqXCHB01/cecilia.png',
-    'https://i.postimg.cc/yYZJDH6R/daiane.jpg',
-    'https://i.postimg.cc/7YGBbfTN/daine.png',
-    'https://i.postimg.cc/nhKGQ7Vq/danielli.jpg',
-    'https://i.postimg.cc/Zq77C3jV/eduarda-silva.png',
-    'https://i.postimg.cc/g0J4FjdR/elisa.png',
-    'https://i.postimg.cc/7hMSTrww/eliza-oliver.png',
-    'https://i.postimg.cc/6pS4qpnC/emanuelle.jpg',
-    'https://i.postimg.cc/GpdwkkFR/emilly-ta.jpg',
-    'https://i.postimg.cc/Bvqk8J3Q/emily-silva.jpg',
-    'https://i.postimg.cc/mZzLZyVp/fernanda-gabriela.jpg',
-    'https://i.postimg.cc/BQ0rWTzK/fernanda-lima.png',
-    'https://i.postimg.cc/BvkzmHDt/fernanda-silva.jpg',
-    'https://i.postimg.cc/bwvF839s/giovanna-freitas.png',
-    'https://i.postimg.cc/7h8ZrCvZ/GIOVANNA-TRINDADE.png',
-    'https://i.postimg.cc/Y9NJjjG9/giulia-serena.png',
-    'https://i.postimg.cc/52HTLsYD/isa.jpg',
-    'https://i.postimg.cc/V6FVmTp0/isabel.png',
-    'https://i.postimg.cc/qqbDCKkk/isabella-eduardo.jpg',
-    'https://i.postimg.cc/HWhtXdws/jenifer.png',
-    'https://i.postimg.cc/PJwvmsHP/julia-carvalho.png',
-    'https://i.postimg.cc/5t4K91d5/julia-santos.jpg',
-    'https://i.postimg.cc/XY3Qx3JM/julia-sants.png',
-    'https://i.postimg.cc/2S2FwZMv/julia.jpg',
-    'https://i.postimg.cc/R02tsQR3/juliana-luna.jpg',
-    'https://i.postimg.cc/wjvs9b4y/kamilly.jpg',
-    'https://i.postimg.cc/j2SRyB7y/lais-silvaa.png',
-    'https://i.postimg.cc/s2CyTMWj/laura-silva.png',
-    'https://i.postimg.cc/htTRQK5H/leticia-oliveira.png',
-    'https://i.postimg.cc/MTcCxxVP/luiza.jpg',
-    'https://i.postimg.cc/kXtgw3Hy/maite.png',
-    'https://i.postimg.cc/zBbGQsB5/manu-silveira.png',
-    'https://i.postimg.cc/DzD21xcN/manuela-carvalho.png',
-    'https://i.postimg.cc/G2G1GdtB/mari-ta.png',
-    'https://i.postimg.cc/7Zh8Xgbr/maria-cecilia.jpg',
-    'https://i.postimg.cc/bJj5XbYJ/Maria-eduarda.png',
-    'https://i.postimg.cc/NMzr98yG/mariane.png',
-    'https://i.postimg.cc/CM9m9kvV/michelle.png',
-    'https://i.postimg.cc/y63ThW7p/milena.png',
-    'https://i.postimg.cc/9M7q9RyG/mirela.png',
-    'https://i.postimg.cc/sXdgtnZh/monica.png',
-    'https://i.postimg.cc/0Qn1cZGx/nicole-refrigues.png',
-    'https://i.postimg.cc/CKVy09mS/nina.jpg',
-    'https://i.postimg.cc/nrW5PWX8/olviia.png',
-    'https://i.postimg.cc/50NRNJvd/rebeca-g.png',
-    'https://i.postimg.cc/pVS6xgL4/rebeca-soares.jpg',
-    'https://i.postimg.cc/zvHpVGGM/roberta.jpg',
-    'https://i.postimg.cc/x1Pr0t7m/sabrina.png',
-    'https://i.postimg.cc/SN718jrF/sabrinasaraiva.jpg',
-    'https://i.postimg.cc/jqyM0CBw/sara-ate.png',
-    'https://i.postimg.cc/dQRjNpTG/sophia-escarella.png',
-    'https://i.postimg.cc/KjQLcXnV/srena.png',
-    'https://i.postimg.cc/yx6gbfwT/valeria.png',
-    'https://i.postimg.cc/0yK6FKHh/yasmin.jpg',
-    'https://i.postimg.cc/L4f2cBHt/84ff5d4969b1b130975ee331269614c6.jpg',
-    'https://i.postimg.cc/cJrNXf98/336uwqis1lkw8.webp',
-    'https://i.postimg.cc/QxhGv2YD/images-1.jpg',
-    'https://i.postimg.cc/ZKVg2CyP/images-2.jpg',
-    'https://i.postimg.cc/05CHKbZg/images-3.jpg',
-    'https://i.postimg.cc/xC2tc2zT/images-4.jpg',
-    'https://i.postimg.cc/qMRQtQzn/images.jpg',
-    'https://i.postimg.cc/QN6Jr50M/ocaraperfeitohahahahaha1.jpg',
-    'https://i.postimg.cc/V6k07ZyW/portaldoholanda-portaldoholanda-portaldoholanda-whatsappimage2022-11-11at74356pm-1191112-1191112-119.jpg',
-    'https://i.postimg.cc/JnSJG3g3/reproducao-facebook.jpg',
-    'https://i.postimg.cc/MpGTJM3z/rod-smith-1389357818829-300x300.jpg',
-    'https://i.postimg.cc/j2XsGtzW/selfie-foto-masculina6.webp',
-    'https://i.postimg.cc/Kv0GfcGw/transferir.jpg'
-  ];
-
-  // Função para embaralhar o array de imagens
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // troca de elementos
-    }
-  }
-
-  // Embaralhar o array de imagens para garantir aleatoriedade
-  shuffleArray(userImages);
-
-  // Obter todos os elementos com a classe .user-photo e .user-info
-  const userPhotos = document.querySelectorAll('.user-photo');
-  const userInfos = document.querySelectorAll('.user-info');
-
-  // Assegurar que haja imagens suficientes para os elementos disponíveis
-  if (userPhotos.length > userImages.length) {
-    console.error("Não há imagens suficientes para todos os elementos .user-photo!");
-    return;
-  }
-
-  // Loop por cada cartão de usuário para atribuir imagens e números de telefone únicos
-  userPhotos.forEach((userPhoto, index) => {
-    // Atribuir uma imagem de fundo única para cada .user-photo
-    userPhoto.style.backgroundImage = `url('${userImages[index]}')`;
-  });
-
-  userInfos.forEach((userInfo, index) => {
-    // Gerar e atribuir um número de telefone aleatório para cada .user-info
-    userInfo.textContent = `+54 ${randomDDD()} 9${randomDigits()}-****`;
-  });
-});
-</script>
-
-<!-- Estrutura do cartão de usuário -->
-<div class="user-card">
-  <div class="user-photo" style="background-image: url(" https:="" i.postimg.cc="" zkvg2cyp="" images-2.jpg");"="" mzzlzyvp="" fernanda-gabriela.jpg");"=""></div>
-  <div class="user-info">+54 95 95286-****</div>
-</div>
-<!-- Repita a estrutura acima para cada cartão de usuário que desejar adicionar -->
+<div id="progress-list">
+  <div class="progress-item">
+    <span class="status-icon completed"><i class="fas fa-check"></i></span>
+    <span class="status-text">Conectándose al dispositivo...</span>
+  </div>
+  <!-- Itens adicionais que começam ocultos -->
+  <div class="progress-item">
+    <span class="status-icon">2</span>
+    <span class="status-text">Análisis de conversaciones iniciado</span>
+  </div>
+  <div class="progress-item">
+    <span class="status-icon">3</span>
+    <span class="status-text">Analizando mensajes.</span>
+  </div>
+  <div class="progress-item">
+    <span class="status-icon">4</span>
+    <span class="status-text">Analizando medios</span>
+  </div>
+  <div class="progress-item">
+    <span class="status-icon">5</span>
+    <span class="status-text">Analisando audios</span>
+  </div>
+  <div class="progress-item">
+    <span class="status-icon">6</span>
+    <span class="status-text">Recuperando mensajes eliminados.</span>
+  </div>
+  <div class="progress-item">
+    <span class="status-icon">7</span>
+    <span class="status-text">Analizando conversaciones archivadas.</span>
+  </div>
+  <div class="progress-item">
+    <span class="status-icon">8</span>
+    <span class="status-text">Filtrando pruebas sospechosas.</span>
+  </div>
+</div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6c92a910 elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="6c92a910" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a class="elementor-button elementor-size-sm" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">Análisis completo - Haga clic para acceder a los datos - Si no se abre con el primer clic, presione el botón nuevamente </span>
+		</span>
+					</a>
 		</div>
 				</div>
 				</div>
-		<div class="elementor-element elementor-element-746ee7a2 elementor-hidden-desktop e-flex e-con-boxed e-con e-parent" data-id="746ee7a2" data-element_type="container" data-core-v316-plus="true">
+				</div>
+		<div class="elementor-element elementor-element-3581cedc elementor-hidden-desktop e-flex e-con-boxed e-con e-parent" data-id="3581cedc" data-element_type="container" data-core-v316-plus="true">
 					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-430a270 elementor-widget elementor-widget-heading" data-id="430a270" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-element elementor-element-681720ee elementor-widget elementor-widget-heading" data-id="681720ee" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">2024 © WhatSpy Tecnología y Espionaje</h2>		</div>
+			<style>/*! elementor - v3.20.0 - 26-03-2024 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2 class="elementor-heading-title elementor-size-default">2024 © WhatSpy Tecnología y Espionaje</h2>		</div>
 				</div>
 					</div>
 				</div>
@@ -874,7 +400,7 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/whatspysapps.pro\/wp-admi
 <script src="js/waypoints.min.js" id="elementor-waypoints-js"></script>
 <script src="js/core.min.js" id="jquery-ui-core-js"></script>
 <script id="elementor-frontend-js-before">
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar","a11yCarouselWrapperAriaLabel":"Carrossel | Rolagem horizontal: Setas para esquerda e direita","a11yCarouselPrevSlideMessage":"Slide anterior","a11yCarouselNextSlideMessage":"Pr\u00f3ximo slide","a11yCarouselFirstSlideMessage":"Este \u00e9 o primeiro slide","a11yCarouselLastSlideMessage":"Este \u00e9 o \u00faltimo slide","a11yCarouselPaginationBulletMessage":"Ir para o slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Dispositivos m\u00f3veis no modo retrato","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Dispositivos m\u00f3veis no modo paisagem","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet no modo retrato","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet no modo paisagem","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Notebook","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Tela ampla (widescreen)","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.20.3","is_static":false,"experimentalFeatures":{"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_swiper_latest":true,"container_grid":true,"theme_builder_v2":true,"block_editor_assets_optimize":true,"ai-layout":true,"landing-pages":true,"e_image_loading_optimization":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/whatspysapps.pro\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":35,"title":"whatspy-3%20%E2%80%93%20WhatSpy","excerpt":"","featuredImage":false}};
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar","a11yCarouselWrapperAriaLabel":"Carrossel | Rolagem horizontal: Setas para esquerda e direita","a11yCarouselPrevSlideMessage":"Slide anterior","a11yCarouselNextSlideMessage":"Pr\u00f3ximo slide","a11yCarouselFirstSlideMessage":"Este \u00e9 o primeiro slide","a11yCarouselLastSlideMessage":"Este \u00e9 o \u00faltimo slide","a11yCarouselPaginationBulletMessage":"Ir para o slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Dispositivos m\u00f3veis no modo retrato","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Dispositivos m\u00f3veis no modo paisagem","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet no modo retrato","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet no modo paisagem","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Notebook","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Tela ampla (widescreen)","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.20.3","is_static":false,"experimentalFeatures":{"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_swiper_latest":true,"container_grid":true,"theme_builder_v2":true,"block_editor_assets_optimize":true,"ai-layout":true,"landing-pages":true,"e_image_loading_optimization":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/whatspysapps.pro\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":44,"title":"whatspy-4%20%E2%80%93%20WhatSpy","excerpt":"","featuredImage":false}};
 </script>
 <script src="js/frontend.min_1.js" id="elementor-frontend-js"></script>
 <script src="js/elements-handlers.min.js" id="pro-elements-handlers-js"></script>

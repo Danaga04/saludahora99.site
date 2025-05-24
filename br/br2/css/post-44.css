@@ -1,0 +1,137 @@
+.elementor-44 .elementor-element.elementor-element-743b3426{--display:flex;--min-height:430px;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--background-transition:0.3s;}.elementor-44 .elementor-element.elementor-element-743b3426:not(.elementor-motion-effects-element-type-background), .elementor-44 .elementor-element.elementor-element-743b3426 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#00D942;}.elementor-44 .elementor-element.elementor-element-743b3426, .elementor-44 .elementor-element.elementor-element-743b3426::before{--border-transition:0.3s;}.elementor-44 .elementor-element.elementor-element-6f437d25{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--background-transition:0.3s;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);}.elementor-44 .elementor-element.elementor-element-6f437d25:not(.elementor-motion-effects-element-type-background), .elementor-44 .elementor-element.elementor-element-6f437d25 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#FFFFFF;}.elementor-44 .elementor-element.elementor-element-6f437d25, .elementor-44 .elementor-element.elementor-element-6f437d25::before{--border-transition:0.3s;}.elementor-44 .elementor-element.elementor-element-6c92a910 .elementor-button{font-family:"Chakra Petch", Sans-serif;font-weight:700;fill:#0C071D;color:#0C071D;background-color:#00D942;}.elementor-44 .elementor-element.elementor-element-3581cedc{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--background-transition:0.3s;}.elementor-44 .elementor-element.elementor-element-681720ee .elementor-heading-title{color:#0C071D;font-family:"Chakra Petch", Sans-serif;font-weight:600;}@media(max-width:767px){.elementor-44 .elementor-element.elementor-element-743b3426{--min-height:100px;--align-items:center;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--z-index:1;}.elementor-44 .elementor-element.elementor-element-7d002d26{width:var( --container-widget-width, 62px );max-width:62px;--container-widget-width:62px;--container-widget-flex-grow:0;}.elementor-44 .elementor-element.elementor-element-7d002d26.elementor-element{--align-self:center;}.elementor-44 .elementor-element.elementor-element-6f437d25{--width:90%;--gap:0% 0%;--border-radius:10px 10px 10px 10px;--margin-block-start:-5%;--margin-block-end:0%;--margin-inline-start:5%;--margin-inline-end:0%;--padding-block-start:30px;--padding-block-end:15px;--padding-inline-start:20px;--padding-inline-end:20px;--z-index:2;}.elementor-44 .elementor-element.elementor-element-71e56f3f > .elementor-widget-container{margin:0px 0px 0px 0px;}.elementor-44 .elementor-element.elementor-element-3727b278 > .elementor-widget-container{margin:5px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-44 .elementor-element.elementor-element-18efd06e > .elementor-widget-container{margin:15px 0px 0px 0px;}.elementor-44 .elementor-element.elementor-element-46b798dc > .elementor-widget-container{padding:0vw 0vw 40vw 0vw;border-radius:00px 00px 00px 00px;}.elementor-44 .elementor-element.elementor-element-4fb9aefc > .elementor-widget-container{margin:35px 0px 0px 0px;}.elementor-44 .elementor-element.elementor-element-6c92a910 .elementor-button{font-size:18px;border-radius:5px 5px 5px 5px;}.elementor-44 .elementor-element.elementor-element-681720ee{text-align:center;}.elementor-44 .elementor-element.elementor-element-681720ee .elementor-heading-title{font-size:16px;}.elementor-44 .elementor-element.elementor-element-681720ee > .elementor-widget-container{padding:20px 0px 20px 0px;}}/* Start custom CSS for html, class: .elementor-element-71e56f3f */.status-container {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  font-family: 'Chakra Petch', sans-serif;
+  /* Outras propriedades de estilo conforme necessário */
+}
+
+.blinking-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #33FF00;
+  margin-right: 5px;
+  animation: blink 1.3s infinite; /* Animação que pisca a cada segundo */
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-3727b278 */.user-card {
+  background-color: #0C071D;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.user-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #48FC1E;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.user-info {
+  font-size: 18px;
+}
+
+/* Animação de Carregamento */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.user-photo.loading {
+  border: 3px solid #48FC1E; /* Cor da borda de carregamento */
+  border-top-color: transparent; /* Faz o topo transparente para criar o efeito de "anel de carregamento" */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* Aplica a animação */
+  background-image: none; /* Remove qualquer imagem de fundo enquanto carrega */
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-46b798dc */#vid_660b0720dc636600080f48ca .video-thumbnail,
+#vid_660b0720dc636600080f48ca .video-backdrop {
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#vid_660b0720dc636600080f48ca .video-thumbnail {
+  object-fit: cover;
+  display: block;
+}
+
+#vid_660b0720dc636600080f48ca .video-backdrop {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-4fb9aefc */@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+.progress-item {
+  display: flex; /* Agora todos os itens são inicialmente visíveis, mas isso será ajustado no CSS seguinte */
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.progress-item ~ .progress-item {
+  display: none; /* Oculta todos os itens subsequentes ao primeiro */
+}
+
+.status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #01cb3e;
+  color: #0C071D;
+  font-weight: 600;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.status-icon.completed i {
+  color: #0C071D;
+  font-size: 12px;
+}
+
+.completed {
+  font-size: 16px;
+}
+
+.status-text {
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulsing {
+  animation: pulse 1s infinite ease-in-out !important;
+}/* End custom CSS */
+/* Start custom CSS for button, class: .elementor-element-6c92a910 */.elementor-widget-button {
+  display: none; /* Esconde o botão */
+}/* End custom CSS */
