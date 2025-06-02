@@ -141,6 +141,32 @@
     });
     </script><div style="font-family: DM Sans; display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer;" bis_skin_checked="1"><div class="button-default button-accept w-full" style="padding: 17px 32px; line-height: 22px; border-radius: 12px; font-weight: 700 !important; background-color: rgb(52, 226, 60); color: rgb(0, 0, 0);" id="llupsell-CEF06DAD3-" bis_skin_checked="1"> PAGAR TAXA E ACESSAR CONTEÚDO </div><div class="button-default button-deny w-full" style="text-decoration: underline; line-height: 22px; font-size: 16px; font-weight: 700 !important; color: rgb(0, 0, 0);" id="denyButton224371e" bis_skin_checked="1"> ㅤㅤㅤㅤㅤㅤㅤ </div></div>
 
+<canvas id="confetti"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<script>
+    // Criação da instância do JSConfetti, especificando o canvas
+    const jsConfetti = new JSConfetti({ canvasId: 'confetti' });
+
+    // Dispara o confete automaticamente quando a página for carregada
+    window.onload = () => {
+        jsConfetti.addConfetti();
+    };
+</script>
+
+<style>
+    #confetti {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 999;
+        pointer-events: none;
+    }
+</style>
+
+    
     <!-- FAQ -->
     <div class="faq">DÚVIDAS FREQUENTES</div>
     <a href="#">› Porque devo pagar essa taxa?</a>
