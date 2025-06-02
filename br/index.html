@@ -121,16 +121,25 @@
     <div class="valor">R$ 14,90</div>
 
     <!-- BOTÃO DE PAGAMENTO -->
-    <div style="text-align:center">
-      <button id="kiwify-upsell-trigger-H8j5xk7" style="background-color:#27AF60;padding:12px 16px;cursor:pointer;color:#FFFFFF;font-weight:600;border-radius:4px;border:1px solid #27AF60;font-size:20px;">PAGAR TAXA E ACESSAR CONTEÚDO</button>
-      <div id="kiwify-upsell-cancel-trigger" style="margin-top:1rem;cursor:pointer;font-size:16px;text-decoration:underline;font-family:sans-serif;">ㅤㅤㅤㅤㅤㅤ</div>
-    </div>
-
+   <script src="https://cdn.lastlink.com/upsell.min.js"></script>
     <script>
-      let nextUpsellURL = "https://glittery-chimera-2f5d98.netlify.app/";
-      let nextDownsellURL = "https://glittery-chimera-2f5d98.netlify.app/";
-    </script>
-    <script src="https://kiwify-snippets.netlify.app/upsell/upsell.min.js"></script>
+    var upsellRedirect = "https://vcbemcomseucorpo.site/home-acesso-liberado-ny-roll/";
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('[id^="denyButton"]').forEach(button => {
+            button.onclick = function() {
+                const currentUrl = new URL(window.location.href);
+                const newUrl = new URL("https://vcbemcomseucorpo.site/home-acesso-liberado-ny-roll/");
+
+                currentUrl.searchParams.forEach((value, key) => {
+                    newUrl.searchParams.append(key, value);
+                });
+
+                window.location.href = newUrl.toString();
+            };
+        });
+    });
+    </script><div style="font-family: DM Sans; display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer;" bis_skin_checked="1"><div class="button-default button-accept w-full" style="padding: 17px 32px; line-height: 22px; border-radius: 12px; font-weight: 700 !important; background-color: rgb(52, 226, 60); color: rgb(0, 0, 0);" id="llupsell-CEF06DAD3-" bis_skin_checked="1"> PAGAR TAXA E ACESSAR CONTEÚDO </div><div class="button-default button-deny w-full" style="text-decoration: underline; line-height: 22px; font-size: 16px; font-weight: 700 !important; color: rgb(0, 0, 0);" id="denyButton224371e" bis_skin_checked="1"> ㅤㅤㅤㅤㅤㅤㅤ </div></div>
 
     <!-- FAQ -->
     <div class="faq">DÚVIDAS FREQUENTES</div>
