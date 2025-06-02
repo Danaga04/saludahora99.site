@@ -1,89 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NY Roll - Página Responsiva</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New York Roll</title>
   <style>
-    /* Esconde ambos inicialmente */
-    .mobile-version, .desktop-version {
-      display: none;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #fff;
     }
 
-    /* Mostra versão mobile em telas pequenas */
-    @media (max-width: 768px) {
-      .mobile-version {
-        display: block;
+    .alerta {
+      background-color: red;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .progresso {
+      background-color: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 12px;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    .barra {
+      background-color: #27AF60;
+      width: 20%;
+      height: 100%;
+    }
+
+    .valor {
+      font-size: 28px;
+      font-weight: bold;
+      color: #27AF60;
+      margin: 20px 0;
+    }
+
+    .info {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .faq {
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .faq-content {
+      font-size: 14px;
+      color: #444;
+      max-width: 400px;
+      margin: 10px auto 0;
+    }
+
+    .faq a {
+      display: block;
+      color: #27AF60;
+      font-size: 14px;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    #confetti {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0px;
+      left: 0px;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
       }
-    }
 
-    /* Mostra versão desktop em telas grandes */
-    @media (min-width: 769px) {
-      .desktop-version {
-        display: block;
+      .info {
+        font-size: 16px;
+      }
+
+      .valor {
+        font-size: 24px;
       }
     }
   </style>
 </head>
 <body>
+  <canvas id="confetti"></canvas> <!-- Confetti canvas -->
 
-  <!-- Versão MOBILE -->
-  <div class="mobile-version">
-    <!-- Cole aqui todo o HTML da versão MOBILE -->
-    <!-- Começa o conteúdo da versão MOBILE -->
-    <canvas id="confetti"></canvas>
-    <div class="alerta">NÃO SAIA DESSA PÁGINA, PODE OCASIONAR ERRO NA SUA COMPRA!</div>
-    <div class="container">
-      <h2>PARABÉNS!!</h2>
-      <div class="info"><strong>Quase acessando o conteúdo exclusivo do New York Roll</strong></div>
-      <div class="progresso"><div class="barra"></div></div>
-      <div class="info">Sua vaga está garantida! Para liberar o acesso, pague a taxa:</div>
-      <div class="valor">R$ 9,99</div>
-      <script src="https://cdn.lastlink.com/upsell.min.js"></script>
-      <script>
-        var upsellRedirect = "https://vcbemcomseucorpo.site/home-acesso-liberado-ny-roll/";
-        document.addEventListener('DOMContentLoaded', function() {
-          document.querySelectorAll('[id^="denyButton"]').forEach(button => {
-            button.onclick = function() {
-              const currentUrl = new URL(window.location.href);
-              const newUrl = new URL(upsellRedirect);
-              currentUrl.searchParams.forEach((value, key) => {
-                newUrl.searchParams.append(key, value);
-              });
-              window.location.href = newUrl.toString();
-            };
-          });
-        });
-      </script>
-      <div style="font-family: DM Sans; display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer;">
-        <div class="button-default button-accept" style="padding: 17px 32px; background-color: #34e23c; color: #000;" id="llupsell-CEF06DAD3-">PAGAR TAXA E ACESSAR CONTEÚDO</div>
-        <div class="button-default button-deny" style="text-decoration: underline; font-size: 16px; font-weight: 700;" id="denyButton224371e">ㅤㅤㅤㅤㅤㅤㅤ</div>
-      </div>
-      <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-      <script>
-        const jsConfetti = new JSConfetti({ canvasId: 'confetti' });
-        window.onload = () => { jsConfetti.addConfetti(); };
-      </script>
-      <div class="faq">DÚVIDAS FREQUENTES</div>
-      <a href="#">› Porque devo pagar essa taxa?</a>
-      <div class="faq-content">
-        Esta cobrança é uma <strong>retenção temporária</strong> contra fraudes. O valor será <strong>reembolsado automaticamente</strong> em alguns dias úteis.
-      </div>
-      <div class="faq-content" style="margin-top: 20px;">
-        <strong>Se o botão verde não funcionar, tente por este link:</strong><br>
-        <a href="https://lastlink.com/p/CEF06DAD3/checkout-payment/" target="_blank">
-          https://lastlink.com/p/CEF06DAD3/checkout-payment/
-        </a>
-      </div>
+  <div class="alerta">NÃO SAIA DESSA PÁGINA, PODE OCASIONAR ERRO NA SUA COMPRA!</div>
+
+  <div class="container">
+    <h2>PARABÉNS!!</h2>
+    <div class="info"><strong>Quase acessando o conteúdo exclusivo do New York Roll</strong></div>
+
+    <div class="progresso">
+      <div class="barra"></div>
     </div>
-  </div>
 
-  <!-- Versão DESKTOP -->
-  <div class="desktop-version">
-    <!-- Cole aqui o HTML da versão para PC (pode ser simplificado para um iframe ou redirecionamento) -->
-    <iframe src="https://vcbemcomseucorpo.site/home-acesso-liberado-ny-roll/" width="100%" height="1000" frameborder="0" style="border:none;"></iframe>
-  </div>
+    <div class="info">
+      Sua vaga para aprender as receitas e técnicas do <strong>New York Roll</strong> está garantida!
+    </div>
 
-</body>
-</html>
+    <div class="info">
+      Para liberar o acesso completo ao conteúdo e materiais, é necessário pagar uma pequena taxa de servidor & segurança no valor de apenas:
+    </div>
+
+    <div class="valor">R$ 9,99</div>
+
+    <!-- BOTÃO DE PAGAMENTO -->
+   <script src="https://cdn.lastlink.com/upsell.min.js"></script>
+    <script>
+    var upsellRedirect = "https://vcbemcomseucorpo.site/home-acesso-liberado-ny-roll/";
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('[id^="denyButton"]').forEach(button => {
+            button.onclick = function() {
+                const currentUrl = new URL(window.location.href);
+                const newUrl = new URL("https://vcbemcomseucorpo.site/home-acesso-liberado-ny-roll/");
+
+                currentUrl.searchParams.forEach((value, key) => {
+                    newUrl.searchParams.append(key, value);
+                });
+
+                window.location.href = newUrl.toString();
+            };
+        });
+    });
+    </script><div style="font-family: DM Sans; display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer;" bis_skin_checked="1"><div class="button-default button-accept w-full" style="padding: 17px 32px; line-height: 22px; border-radius: 12px; font-weight: 700 !important; background-color: rgb(52, 226, 60); color: rgb(0, 0, 0);" id="llupsell-CEF06DAD3-" bis_skin_checked="1"> PAGAR TAXA E ACESSAR CONTEÚDO </div><div class="button-default button-deny w-full" style="text-decoration: underline; line-height: 22px; font-size: 16px; font-weight: 700 !important; color: rgb(0, 0, 0);" id="denyButton224371e" bis_skin_checked="1"> ㅤㅤㅤㅤㅤㅤㅤ </div></div>
+
+<canvas id="confetti"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<script>
+    // Criação da instância do JSConfetti, especificando o canvas
+    const jsConfetti = new JSConfetti({ canvasId: 'confetti' });
+
+    // Dispara o confete automaticamente quando a página for carregada
+    window.onload = () => {
+        jsConfetti.addConfetti();
+    };
+</script>
+
+<style>
+    #confetti {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 999;
+        pointer-events: none;
+    }
+</style>
+
+    
+    <!-- FAQ -->
+    <div class="faq">DÚVIDAS FREQUENTES</div>
+    <a href="#">› Porque devo pagar essa taxa?</a>
+    <div class="faq-content">
+      Esta cobrança é uma <strong>retenção temporária</strong> para evitar fraudes e falsificações do nosso curso. <br>
+      O valor será <strong>reembolsado automaticamente</strong> na sua conta dentro de alguns dias úteis.
+
+      <!-- Link alternativo de pagamento -->
+<div class="faq-content" style="margin-top: 20px;">
+  <strong>Se o botão verde não funcionar, tente por este link:</strong><br>
+  <a href="https://lastlink.com/p/CEF06DAD3/checkout-payment/" target="_blank">
+    https://lastlink.com/p/CEF06DAD3/checkout-payment/
+  </a>
+</div>
