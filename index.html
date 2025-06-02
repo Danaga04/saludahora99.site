@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso NY Roll</title>
+  <title>Curso NY Roll Exclusivo</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
   <style>
-
     html {
-  scroll-behavior: smooth;
-}
-
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #000000;
-      color: white;
+      background-color: #ffffff;
+      color: #333333;
     }
     .container {
       max-width: 1200px;
@@ -26,25 +24,34 @@
       margin: 0;
       line-height: 1.2;
     }
+    .logo {
+      text-align: center;
+      padding: 20px;
+    }
+    .logo img {
+      max-width: 200px;
+      width: 100%;
+    }
     .topo {
       text-align: center;
       padding: 40px 20px;
+      background-color: #f5f5f5;
     }
     .topo .subtitulo {
       color: #b30000;
       font-size: 28px;
     }
     .topo .titulo {
-      color: #00ff66;
+      color: #00cc00;
       font-size: 22px;
     }
     .topo .headline {
-      color: white;
+      color: #333333;
       font-size: 18px;
       margin-top: 10px;
     }
     .headline span {
-      color: #00ff66;
+      color: #00cc00;
       font-weight: bold;
     }
     .video-section {
@@ -52,8 +59,8 @@
       margin: 40px 0;
     }
     .cta-button {
-      background-color: #00ff66;
-      color: #000;
+      background-color: #00cc00;
+      color: #ffffff;
       font-weight: bold;
       font-size: 20px;
       padding: 15px 30px;
@@ -66,8 +73,11 @@
       text-align: center;
       width: max-content;
     }
+    .cta-button:hover {
+      background-color: #009900;
+    }
     .texto-azul {
-      color: #00ccff;
+      color: #00aaff;
       font-size: 18px;
       text-align: center;
     }
@@ -83,8 +93,8 @@
       width: 250px;
       border-radius: 10px;
     }
-    .secao-preta {
-      background-color: #000;
+    .secao-branca {
+      background-color: #ffffff;
       padding: 40px 20px;
     }
     .quatro-colunas {
@@ -95,31 +105,31 @@
       margin-top: 30px;
     }
     .coluna {
-      background-color: #111;
+      background-color: #f5f5f5;
       padding: 20px;
-      border: 1px solid #b30000;
+      border: 1px solid #00cc00;
       width: 250px;
       border-radius: 10px;
     }
     .secao-rosa {
-      background-color: #33001a;
+      background-color: #fff0f5;
       padding: 40px 20px;
       text-align: center;
     }
     .secao-bonus {
-      background-color: #000;
+      background-color: #ffffff;
       padding: 40px 20px;
     }
     .secao-bonus h2 {
       color: #ff007f;
     }
     .secao-bonus ul {
-      color: #ffccff;
+      color: #333333;
       font-weight: bold;
     }
     .secao-depoimentos {
-      background-color: #ffe6f0;
-      color: #000;
+      background-color: #f5f5f5;
+      color: #333333;
       text-align: center;
       padding: 40px 20px;
     }
@@ -129,45 +139,59 @@
       margin: 10px;
     }
     .secao-garantia {
-      background-color: #ffe6f0;
+      background-color: #f5f5f5;
       text-align: center;
       padding: 40px 20px;
     }
     .secao-oferta {
-      background-color: #000;
+      background-color: #ffffff;
       text-align: center;
       padding: 40px 20px;
-      color: #ff007f;
+    }
+    .secao-oferta .oferta-box {
+      background-color: #ffffff;
+      border: 1px solid #00cc00;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .secao-oferta .ultimas-vagas {
+      color: #ff0000;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
     .secao-oferta .preco-original {
       text-decoration: line-through;
-      color: white;
+      color: #333333;
       font-size: 22px;
     }
     .secao-oferta .preco-atual {
-      color: #00ff66;
+      color: #00cc00;
       font-size: 32px;
       font-weight: bold;
     }
-    .secao-presentes {
-      background-color: #000;
-      text-align: center;
-      padding: 40px 20px;
+    .secao-oferta .desconto {
+      color: #333333;
+      font-size: 18px;
+      margin-top: 10px;
     }
     .secao-faq {
-      background-color: #000;
-      color: white;
+      background-color: #ffffff;
+      color: #333333;
       padding: 40px 20px;
     }
     .faq-item {
-      border: 1px solid #00ff66;
+      border: 1px solid #00cc00;
       padding: 15px;
       margin-bottom: 10px;
       border-radius: 10px;
     }
     footer {
-      background-color: #000;
-      color: white;
+      background-color: #f5f5f5;
+      color: #333333;
       text-align: center;
       padding: 20px;
       font-size: 14px;
@@ -177,180 +201,168 @@
         flex-direction: column;
         align-items: center;
       }
+      .secao-oferta .oferta-box {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="logo">
+    <img src="https://saludahora99.site/logomynyroll.png" alt="Logo NY Roll">
+  </div>
   <section class="topo">
-    <h2 class="titulo">CURSO NY ROLL:</h2>
-    <h1 class="subtitulo">O DOCE MAIS DESEJADO DO MOMENTO!</h1>
-    <p class="headline">SUCESSO DE VENDAS NAS REDES SOCIAIS!!! <span>Receita Fácil</span>, <span>Super barata</span> com <span>Alta margem de Lucro</span>
+    <h2 class="titulo">CURSO NY ROLL EXCLUSIVO:</h2>
+    <h1 class="subtitulo">DOMINE O DOCE QUE ESTÁ CONQUISTANDO O MUNDO!</h1>
+    <p class="headline">SUCESSO ABSOLUTO NAS REDES SOCIAIS!!! <span>Receita Simples</span>, <span>Baixo Custo</span> e <span>Lucro Garantido</span></p>
   </section>
 
   <div class="video-section">
-    
-    <div id="vid_683dc6a39250e951ef89d6b4" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0;"> <img id="thumb_683dc6a39250e951ef89d6b4" src="https://images.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/683dc6a39250e951ef89d6b4/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_683dc6a39250e951ef89d6b4" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_683dc6a39250e951ef89d6b4"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/683dc6a39250e951ef89d6b4/player.js", s.async=!0,document.head.appendChild(s); </script>
-   
-    <a href="#secao-rolagem" class="cta-button">ACESSAR CONTEUDO</a>
-    <p class="texto-azul">O DOCE MUNDIAL MAIS FAMOSO DAS REDES SOCIAIS AGORA NA PALMA DA SUA MÃO PARA VOCÊ SAIR NA FRENTE E FATURAR ALTO COM OS QUERIDINHOS DO MOMENTO!!!</p>
+    <div style="position: relative; width: 100%; padding: 56.25% 0 0;">
+      <img src="https://via.placeholder.com/800x450" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" alt="thumbnail">
+    </div>
+    <a href="#secao-rolagem" class="cta-button">GARANTIR MINHA VAGA</a>
+    <p class="texto-azul">O DOCE QUE É FEBRE GLOBAL AGORA AO SEU ALCANCE PARA VOCÊ LUCRAR MUITO COM A TENDÊNCIA DO MOMENTO!</p>
     <div class="imagens-nyroll">
-      <img src="https://saludahora99.site/Bb35SLX1O0qECcmw7zC3iA.png" alt="ny roll 1">
-      <img src="https://saludahora99.site/5heOKxKQX06zvG5eCi7Bg.png" alt="ny roll 2">
-      <img src="https://saludahora99.site/1b9Q3QPLekOiAa6gX3id6g.png" alt="ny roll 3">
+      <img src="https://via.placeholder.com/250x250" alt="ny roll 1">
+      <img src="https://via.placeholder.com/250x250" alt="ny roll 2">
+      <img src="https://via.placeholder.com/250x250" alt="ny roll 3">
     </div>
   </div>
 
-  <!-- Continuação abaixo -->
-  <!-- Comunidade Alta Confeitaria -->
-  <section class="secao-preta">
+  <section class="secao-branca">
     <div class="container">
-      <h2 style="color: #ff007f; text-align: center;">COMUNIDADE “ALTA CONFEITARIA”</h2>
-      <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-        <img src="https://saludahora99.site/icone-perfil-mulher.png" alt="Perfil de mulher segurando o doce" style="width: 100px; border-radius: 50%; margin-right: 20px;">
-        <p style="max-width: 600px; color: white;">Junte-se à nossa comunidade exclusiva de confeiteiros apaixonados! Compartilhe experiências, tire dúvidas e cresça junto com outros alunos que estão transformando suas vidas com o NY Roll.</p>
-      </div>
+      <h2 style="color: #ff007f; text-align: center;">COMUNIDADE “MESTRES DO NY ROLL”</h2>
+      <p style="max-width: 600px; color: #333333; text-align: center; margin: 20px auto;">Faça parte da nossa comunidade de confeiteiros apaixonados! Troque ideias, receba suporte e cresça junto com outros alunos que estão faturando alto com o NY Roll.</p>
     </div>
   </section>
 
-  <!-- O que você vai aprender -->
-  <section class="secao-preta">
+  <section class="secao-branca">
     <div class="container">
-      <h2 style="color: #b30000; text-align: center;">O QUE VOCÊ VAI APRENDER</h2>
+      <h2 style="color: #b30000; text-align: center;">O QUE VOCÊ VAI DOMINAR</h2>
       <div class="quatro-colunas">
         <div class="coluna">
-          <h3 style="color: #ff007f;">NOSSO SEGREDO</h3>
-          <p>Descubra a técnica exclusiva que torna o NY Roll irresistível e único no mercado.</p>
-          <img src="https://saludahora99.site/Bb35SLX1O0qECcmw7zC3iA.png" alt="NY Roll" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+          <h3 style="color: #ff007f;">TÉCNICA EXCLUSIVA</h3>
+          <p>Aprenda o segredo por trás do NY Roll perfeito que encanta clientes.</p>
+          <img src="https://via.placeholder.com/250x150" alt="NY Roll" style="width: 100%; border-radius: 10px; margin-top: 10px;">
         </div>
         <div class="coluna">
-          <h3 style="color: #ff007f;">30 RECEITAS DELICIOSAS</h3>
-          <p>Aprenda a fazer 30 variações incríveis do NY Roll para encantar seus clientes.</p>
-          <img src="https://saludahora99.site/5heOKxKQX06zvG5eCi7Bg.png" alt="NY Roll" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+          <h3 style="color: #ff007f;">25+ RECEITAS</h3>
+          <p>Domine mais de 25 variações do NY Roll para diversificar seu cardápio.</p>
+          <img src="https://via.placeholder.com/250x150" alt="NY Roll" style="width: 100%; border-radius: 10px; margin-top: 10px;">
         </div>
         <div class="coluna">
-          <h3 style="color: #ff007f;">LUCRAR ALTO COM FOLHADOS</h3>
-          <p>Entenda como transformar sua paixão em uma fonte de renda lucrativa.</p>
-          <img src="https://saludahora99.site/1b9Q3QPLekOiAa6gX3id6g.png" alt="NY Roll" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+          <h3 style="color: #ff007f;">NEGÓCIO LUCRATIVO</h3>
+          <p>Transforme sua paixão em uma fonte de renda com alta margem de lucro.</p>
+          <img src="https://via.placeholder.com/250x150" alt="NY Roll" style="width: 100%; border-radius: 10px; margin-top: 10px;">
         </div>
         <div class="coluna">
-          <h3 style="color: #ff007f;">PROCESSO COMPLETO</h3>
-          <p>Desde a escolha dos ingredientes até a finalização perfeita do doce.</p>
-          <img src="https://saludahora99.site/Bb35SLX1O0qECcmw7zC3iA.png" alt="NY Roll" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+          <h3 style="color: #ff007f;">PASSO A PASSO</h3>
+          <p>Do preparo dos ingredientes à apresentação final do doce.</p>
+          <img src="https://via.placeholder.com/250x150" alt="NY Roll" style="width: 100%; border-radius: 10px; margin-top: 10px;">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Números impressionantes -->
   <section class="secao-rosa">
     <div class="container">
-      <h2 style="color: #ffffff;">NÚMEROS IMPRESSIONANTES</h2>
+      <h2 style="color: #333333;">NÚMEROS QUE IMPRESSIONAM</h2>
       <div class="quatro-colunas">
         <div class="coluna">
-          <h3 style="color: #00ff66;">3.772 ALUNOS</h3>
-          <p>Já transformaram suas vidas com o NY Roll.</p>
+          <h3 style="color: #00cc00;">5.000+ ALUNOS</h3>
+          <p>Já mudaram de vida com o curso NY Roll.</p>
         </div>
         <div class="coluna">
-          <h3 style="color: #00ff66;">7 BÔNUS</h3>
-          <p>Exclusivos para potencializar suas vendas.</p>
+          <h3 style="color: #00cc00;">8 BÔNUS</h3>
+          <p>Exclusivos para alavancar suas vendas.</p>
         </div>
         <div class="coluna">
-          <h3 style="color: #00ff66;">100% ONLINE</h3>
-          <p>Aprenda no seu ritmo, de onde estiver.</p>
+          <h3 style="color: #00cc00;">100% ONLINE</h3>
+          <p>Estude onde e quando quiser.</p>
         </div>
         <div class="coluna">
-          <h3 style="color: #00ff66;">100% EXPLICAÇÃO</h3>
-          <p>Do início ao fim, sem segredos.</p>
+          <h3 style="color: #00cc00;">TUDO EXPLICADO</h3>
+          <p>Do básico ao avançado, sem mistérios.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Bônus exclusivos -->
   <section class="secao-bonus">
     <div class="container">
-      <h2>GARANTINDO SUA VAGA HOJE VOCÊ AINDA TERÁ DIREITO A 7 BÔNUS EXCLUSIVOS:</h2>
+      <h2>8 BÔNUS EXCLUSIVOS AO GARANTIR SUA VAGA HOJE:</h2>
       <ul>
-        <li>Receitas secretas de recheios gourmet</li>
-        <li>Guia completo de precificação</li>
-        <li>Checklist de utensílios essenciais</li>
-        <li>Modelo de cardápio atrativo</li>
-        <li>Consultoria de marketing digital</li>
+        <li>Receitas de recheios premium</li>
+        <li>Guia de precificação estratégica</li>
+        <li>Lista de utensílios indispensáveis</li>
+        <li>Template de cardápio profissional</li>
+        <li>Estratégias de marketing digital</li>
         <li>Grupo VIP no WhatsApp</li>
         <li>Certificado de conclusão</li>
+        <li>Plano de vendas para iniciantes</li>
       </ul>
     </div>
   </section>
 
-  <!-- Provas sociais (Depoimentos) -->
   <section class="secao-depoimentos">
     <div class="container">
-      <h2>O QUE NOSSOS ALUNOS ESTÃO DIZENDO</h2>
-      <img src="https://saludahora99.site/48x71jrMPU6Z4YNhMhwlTw.jpg" alt="Depoimento principal">
+      <h2>O QUE NOSSOS ALUNOS DIZEM</h2>
+      <img src="https://via.placeholder.com/800x450" alt="Depoimento principal">
       <div class="imagens-nyroll">
-        <img src="https://saludahora99.site/mbuFYSglk2R5mXV3UUsjg.jpg" alt="Depoimento 1">
-        <img src="https://saludahora99.site/r6UCoFiyH02AhirV1zt4Q.jpg" alt="Depoimento 2">
-        <img src="https://saludahora99.site/ecx0rHWJgEmYfLQvGCdkVA.jpg" alt="Depoimento 3">
+        <img src="https://via.placeholder.com/250x250" alt="Depoimento 1">
+        <img src="https://via.placeholder.com/250x250" alt="Depoimento 2">
+        <img src="https://via.placeholder.com/250x250" alt="Depoimento 3">
       </div>
     </div>
   </section>
 
-  <!-- Garantia -->
   <section class="secao-garantia">
     <div class="container">
-      <h2>GARANTIA TOTAL DE 7 DIAS!</h2>
-      <img src="https://saludahora99.site/wwnpAakXsk61C6rUjxLg.png" alt="Selo de garantia" style="width: 150px; margin-top: 20px;">
+      <h2>GARANTIA INCONDICIONAL DE 7 DIAS!</h2>
+      <img src="https://via.placeholder.com/150x150" alt="Selo de garantia" style="width: 150px; margin-top: 20px;">
     </div>
   </section>
 
-  <!-- Oferta especial -->
   <section id="secao-rolagem" class="secao-oferta">
     <div class="container">
-      <h2>OFERTA ESPECIAL</h2>
-      <p class="preco-original">De R$849,92</p>
-      <p class="preco-atual">Por apenas R$27,90</p>
-      <a href="https://pay.kiwify.com.br/SiCcaEk" class="cta-button">COMPRAR AGORA</a>
+      <div class="oferta-box">
+        <h2>OFERTA EXCLUSIVA - ÚLTIMAS VAGAS!</h2>
+        <p class="ultimas-vagas">APENAS ALGUMAS VAGAS RESTANTES!</p>
+        <p class="preco-original">De R$999,90</p>
+        <p class="preco-atual">Por apenas R$29,90</p>
+        <p class="desconto">DESCONTO ESPECIAL DE 97%!</p>
+        <a href="#" class="cta-button">GARANTIR MINHA VAGA AGORA</a>
+      </div>
     </div>
   </section>
 
-
-  <!-- Perguntas frequentes -->
   <section class="secao-faq">
     <div class="container">
       <h2 style="color: #ff007f;">PERGUNTAS FREQUENTES</h2>
       <div class="faq-item">
-        <h3>Preciso ter experiência prévia em confeitaria?</h3>
-        <p>Não! O curso é indicado tanto para iniciantes quanto para profissionais que desejam aprimorar suas habilidades.</p>
+        <h3>É necessário experiência em confeitaria?</h3>
+        <p>Não! O curso é perfeito para iniciantes e profissionais.</p>
       </div>
       <div class="faq-item">
-        <h3>O curso é totalmente online?</h3>
-        <p>Sim, você pode acessar o conteúdo de qualquer lugar e no seu próprio ritmo.</p>
+        <h3>O curso é online?</h3>
+        <p>Sim, 100% online, com acesso flexível.</p>
       </div>
       <div class="faq-item">
-        <h3>Receberei certificado?</h3>
-        <p>Sim, ao concluir o curso, você receberá um certificado de conclusão.</p>
+        <h3>Vou receber um certificado?</h3>
+        <p>Sim, você receberá um certificado ao concluir.</p>
       </div>
       <div class="faq-item">
         <h3>Como acesso os bônus?</h3>
-        <p>Todos os bônus estarão disponíveis na plataforma do curso após a confirmação da sua inscrição.</p>
+        <p>Os bônus estarão disponíveis na plataforma após a inscrição.</p>
       </div>
     </div>
   </section>
 
-  <script>
-  window.pixelId = "683b3ed3b67da67997e52c5d";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
-
-  <!-- Rodapé -->
   <footer>
     <div class="container">
-      <p>© 2025 Curso NY Roll. Todos os direitos reservados.</p>
-      <p><a href="#" style="color: white;">Política de Privacidade</a> | <a href="#" style="color: white;">Termos de Uso</a></p>
+      <p>© 2025 Curso NY Roll Exclusivo. Todos os direitos reservados.</p>
+      <p><a href="#" style="color: #333333;">Política de Privacidade</a> | <a href="#" style="color: #333333;">Termos de Uso</a></p>
     </div>
   </footer>
 </body>
