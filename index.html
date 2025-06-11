@@ -1,290 +1,104 @@
-<!DOCTYPE html><html lang="pt-br"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Corpo Violão em 21 Dias</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
 
-    <script>
-  window.pixelId = "683b3ed3b67da67997e52c5d";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script><script async="" defer="" src="js/pixel.js"></script>
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-    <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brigadeiros Sem Fogo - Quiz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            background: #fff;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            text-align: center;
-        }
-        .logo-topo {
-            width: 120px;
-            margin: 20px auto 10px auto;
-            display: none;
-        }
-        .progress-container {
-            width: 90%;
-            background-color: #e0e0e0;
-            border-radius: 20px;
-            margin: 0 auto 10px auto;
-            height: 15px;
-            overflow: hidden;
-            display: none;
-        }
-        .progress {
-            height: 100%;
-            width: 0;
-            background-color: #28a745;
-            border-radius: 20px;
-            transition: width 0.3s;
-        }
-        .quiz-container {
-            max-width: 500px;
-            margin: auto;
-            padding: 10px;
-        }
-        .quiz-image {
-            width: 80%;
-            max-width: 300px;
-            border: 5px solid #5C4033;
-            border-radius: 12px;
-            display: block;
-            margin: 0 auto 20px auto;
-        }
-        .question {
-            font-size: 22px;
-            margin: 20px 0;
-        }
-        .options button {
-            display: block;
-            width: 90%;
-            margin: 10px auto;
-            padding: 15px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .options button:hover {
-            background-color: #218838;
-        }
-        .progress-bar-container {
-            width: 90%;
-            background-color: #e0e0e0;
-            border-radius: 20px;
-            margin: 20px auto;
-            height: 25px;
-            overflow: hidden;
-        }
-        .progress-bar {
-            height: 100%;
-            width: 0;
-            background-color: #28a745;
-            border-radius: 20px;
-            transition: width 0.2s;
-        }
-        .loading-text {
-            font-size: 18px;
-            margin-top: 15px;
-        }
+    h1 {
+      font-size: 1.8rem;
+      color: #ff4c4c;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-        /* Efeito Fade In */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 0.5s forwards;
-        }
+    .highlight {
+      color: #ffcc00;
+      font-weight: bold;
+    }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    .strong {
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    .cta-button {
+      display: block;
+      background-color: #ff4c4c;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      margin: 30px auto;
+      max-width: 400px;
+    }
+
+    .cta-button:hover {
+      background-color: #e60000;
+    }
+
+    .attention {
+      background-color: #222;
+      padding: 15px;
+      border-left: 5px solid #ffcc00;
+      margin: 25px 0;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .cta-button {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Seu produto de Pilates na Parede já está a caminho do seu e-mail...</h1>
 
-    <img src="images/Logo-simples-pra-confeitaria-rosaFESFSFS-150x150.jpg.webp" class="logo-topo" id="logoTopo" style="display: none;">
+    <p>Mas antes de você sair dessa página, <span class="highlight">deixa eu te mostrar como você pode queimar até 7x mais gordura</span> do que antes, com um método extra da <strong class="strong">Dra. Monique</strong>, que vem transformando o corpo de centenas de mulheres.</p>
 
-    <div class="progress-container" id="progressContainer" style="display: none;">
-        <div class="progress" id="progress"></div>
+    <div class="attention">
+      São mais de <strong class="highlight">20 aulas passo a passo</strong> com treinos HIIT rápidos e intensos, feitos pra deixar o <strong class="highlight">bumbum durinho, empinado</strong> e seu corpo com aquele formato violão de dar inveja!
     </div>
 
-    <div class="quiz-container">
-        <div id="step"><div class="fade-in"><img src="images/TEMPLATE-G1-TBFSFASF-e1742836670158.png.webp" class="quiz-image"><div class="question">Você está pronta para aprender a fazer brigadeiros perfeitos e começar a lucrar trabalhando de casa ainda hoje?</div><div class="options"><button onclick="nextStep()">SIM, VAMOS COMEÇAR!</button></div></div></div>
-    </div>
+    <p>Você vai suar, queimar gordura, e começar a sentir sua autoestima explodindo quando se olhar no espelho e <strong class="highlight">ver a barriga chapada e o quadril modelado</strong>... sem sentir vergonha do seu corpo.</p>
 
-    <script>
-        const steps = [
-            {
-                img: 'https://raw.githubusercontent.com/Danaga04/uhealthy.site/refs/heads/main/TEMPLATE-G1-TBFSFASF-e1742836670158.png.webp',
-                question: 'Você está pronta para aprender a fazer brigadeiros perfeitos e começar a lucrar trabalhando de casa ainda hoje?',
-                options: ['SIM, VAMOS COMEÇAR!']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS.webp',
-                question: 'Você já realizou algum treinamento de brigadeiros?',
-                options: ['Nunca fiz', 'Aprendi sozinha', 'Gostaria de fazer']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1.webp',
-                question: 'Seus brigadeiros ficam na qualidade que você quer?',
-                options: ['Não, cada vez ficam de um jeito', 'Às vezes sim, mas não sempre', 'Tenho dificuldade. Nunca fiz']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1-1.webp',
-                question: 'Ele perde qualidade de um dia para o outro?',
-                options: ['Sim', 'Não', 'Não sei fazer']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/webp-express/webp-images/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-2.jpg.webp',
-                question: 'O tempo de preparo tem sido muito longo?',
-                options: ['3 a 4 horas. Fico bem cansada', 'Mais de 4 horas', 'Em média 2 horas... 100/130 unidades', 'Não sei fazer']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/webp-express/webp-images/uploads/2025/03/TEMPLATE-G1-TBF.png.webp',
-                question: '',
-                options: ['CONTINUAR...']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/DGSGD.webp',
-                question: 'Olá, eu sou a Mariana Sánchez…\n\nTer filhos foi a melhor coisa que já aconteceu na minha vida. Mas também me forçou a aprender uma nova profissão.\n\nComecei a vender brigadeiros que não vão ao fogo e hoje faturo em média R$20.000 todos os meses. Agora é exatamente isso que eu vou te ensinar!',
-                options: ['CONTINUAR...']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-2.webp',
-                question: 'Ganhar até R$5.000,00 por mês e sem precisar sair de casa é interessante pra você nesse momento?',
-                options: ['Sim, irá mudar minha vida!', 'Ajudaria, estou precisando']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1-2-e1742852436475.webp',
-                question: 'Você já trabalha com confeitaria?',
-                options: ['Estou entrando agora', 'Sei me virar com minhas receitas', 'Já trabalhei por um tempo', 'Sou expert, já faço e vendo doces']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/webp-express/webp-images/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-2yhukioyu.jpg.webp',
-                question: 'Como é sua disponibilidade de horário atualmente?',
-                options: ['2 horas ou menos', 'De 3 a 4 horas', 'Tenho o dia todo']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1-3.webp',
-                question: 'O que mais te incomoda hoje?',
-                options: ['Não sobra dinheiro pra fazer as coisas que gosto', 'Não sobra tempo pra ficar com minha família', 'Não consigo guardar dinheiro']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-1-1-1.webp',
-                question: 'Quanto você gostaria de ganhar vendendo brigadeiros já no próximo mês?',
-                options: ['Entre R$1.000 e R$2.000', 'Entre R$2.000 e R$4.000', 'Entre R$5.000 e R$7.000']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-2-2.webp',
-                question: 'Você tem um leite condensado em casa?',
-                options: ['Sim. pronta para começar', 'Não, mas eu posso comprar']
-            },
-            {
-                img: 'https://institutovirtual.com.br/wp-content/uploads/2025/03/Copia-de-FOTO-QUIZ-PGS-3KJKJ.webp',
-                question: 'Você se compromete a seguir o plano que vou desenvolver para você?',
-                options: ['Sim, me comprometo', 'Não sei se vou conseguir']
-            },
-            {
-                question: 'Processando suas respostas...',
-                options: []
-            }
-        ];
+    <p>Vai poder usar aquela legging colada, sem medo. Vai chamar a atenção quando entrar em qualquer ambiente. <strong class="highlight">Vai deixar qualquer homem maluco só de passar.</strong></p>
 
-        let currentStep = 0;
+    <a href="URL-DO-PRODUTO-HIIT" class="cta-button">QUERO TER UM CORPÃO VIOLÃO AGORA</a>
 
-        const logoTopo = document.getElementById('logoTopo');
-        const progressContainer = document.getElementById('progressContainer');
-        const progress = document.getElementById('progress');
-        const stepDiv = document.getElementById('step');
+    <p style="text-align: center; color: #aaa; font-size: 0.9rem;">⚠️ Essa é uma oferta única. Se sair da página, ela desaparece.</p>
+  </div>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 
-        function renderStep() {
-            const step = steps[currentStep];
-
-            if (currentStep === 0) {
-                logoTopo.style.display = 'none';
-                progressContainer.style.display = 'none';
-            } else {
-                logoTopo.style.display = 'block';
-                progressContainer.style.display = 'block';
-                updateProgress();
-            }
-
-            let html = `<div class="fade-in">`;
-
-            if (step.img) {
-                html += `<img src="${step.img}" class="quiz-image">`;
-            }
-
-            if (step.question) {
-                html += `<div class="question">${step.question.replace(/\n/g, '<br>')}</div>`;
-            }
-
-            if (step.options.length) {
-                html += '<div class="options">';
-                step.options.forEach(option => {
-                    html += `<button onclick="nextStep()">${option}</button>`;
-                });
-                html += '</div>';
-            }
-
-            html += `</div>`;
-
-            stepDiv.innerHTML = html;
-        }
-
-        function updateProgress() {
-            const totalSteps = steps.length - 1;
-            const percentage = Math.min((currentStep / totalSteps) * 100, 100);
-            progress.style.width = percentage + '%';
-        }
-
-        function nextStep() {
-            currentStep++;
-
-            if (currentStep === steps.length - 1) {
-                renderLoading();
-            } else {
-                renderStep();
-            }
-        }
-
-        function renderLoading() {
-            logoTopo.style.display = 'block';
-            progressContainer.style.display = 'block';
-            stepDiv.innerHTML = `
-                <div class="fade-in">
-                    <div class="question">${steps[currentStep].question}</div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" id="progressBar"></div>
-                    </div>
-                    <div class="loading-text">Carregando...</div>
-                </div>
-            `;
-            let width = 0;
-            const progressBar = document.getElementById('progressBar');
-            const progressInterval = setInterval(() => {
-                if (width >= 100) {
-                    clearInterval(progressInterval);
-                    window.location.href = 'https://uhealthy.site/br/';
-                } else {
-                    width++;
-                    progressBar.style.width = width + '%';
-                }
-            }, 30);
-        }
-
-        renderStep();
-    </script>
-
-
-</body></html>
+</body>
+</html>
