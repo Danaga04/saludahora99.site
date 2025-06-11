@@ -1,59 +1,83 @@
-<!DOCTYPE html><html lang="pt-BR"><!-- HEAD --><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual das Amantes</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obrigado pela sua compra!</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
+    h1 {
+      color: #00ffcc;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-<!-- Fonte Poppins via Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
 
-<style>
-  .aviso-topo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
-    font-weight: 600;
-    padding: 12px 10px;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    z-index: 9999;
-  }
+    .highlight {
+      color: #ffcc00;
+      font-weight: bold;
+    }
 
-  .espaco-abaixo-aviso {
-    height: 60px; /* Ajuste o valor conforme necessário */
-  }
+    .whatsapp-button {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
 
-  body {
-    margin: 0;
-    padding-top: 50px;
-    font-family: 'Poppins', sans-serif;
-  }
-</style>
+    .whatsapp-button:hover {
+      background-color: #1ebe5b;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .whatsapp-button {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <h1>🎉 Obrigada pela sua compra!</h1>
 
-  <div class="aviso-topo" id="aviso-topo">
-    ESSE VÍDEO SAIRÁ DO AR HOJE <span id="data-hoje"></span> ATÉ AS 23:59!
-  </div>
+  <p>Todos os seus acessos já foram <span class="highlight">enviados para o seu e-mail</span>.</p>
 
-  <div class="espaco-abaixo-aviso"></div>
+  <p><strong>Atenção:</strong> Verifique também sua <span class="highlight">caixa de spam, promoções ou lixo eletrônico</span>, pois o e-mail pode ter caído lá.</p>
 
-  <!-- Conteúdo da página aqui -->
+  <p>Não encontrou o acesso?<br>
+  Chame a nossa equipe no WhatsApp e solicite: <br><strong>(19) 99562-3368</strong></p>
 
-  <script>
-    const hoje = new Date();
-    const dia = String(hoje.getDate()).padStart(2, '0');
-    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
-    const ano = hoje.getFullYear();
-    document.getElementById('data-hoje').textContent = `${dia}/${mes}/${ano}`;
-  </script>
+  <a href="https://wa.me/5519995623368?text=Olá%2C+não+encontrei+meus+acessos+do+treinamento" class="whatsapp-button" target="_blank">ENVIAR MENSAGEM</a>
 
-<div id="vid_68420b3d86648700ca803b59" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0;"> <img id="thumb_68420b3d86648700ca803b59" src="https://images.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68420b3d86648700ca803b59/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_68420b3d86648700ca803b59" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_68420b3d86648700ca803b59"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68420b3d86648700ca803b59/player.js", s.async=!0,document.head.appendChild(s); </script>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 
     
-
-</body></html>
+</body>
+</html>
