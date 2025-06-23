@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Éxtasis de Placer</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+    .headline {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .video-container {
+      margin: 30px auto;
+      width: 100%;
+      max-width: 400px;
+    }
+    footer {
+      color: #aaa;
+      font-size: 14px;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="headline" id="headline">
+    ¡Último día para ver este video es {hoy}!
+  </div>
+
+  <div class="video-container">
+    <vturb-smartplayer id="vid-676d3e20b895cc5537788fa3" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+    <script type="text/javascript">
+      var s = document.createElement("script");
+      s.src = "https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/676d3e20b895cc5537788fa3/v4/player.js";
+      s.async = true;
+      document.head.appendChild(s);
+    </script>
+  </div>
+
+  <footer>
+    Éxtasis de Placer - Todos los derechos reservados
+  </footer>
+
+  <script>
+    const hoje = new Date();
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const ano = hoje.getFullYear();
+    const dataFormatada = `${dia}/${mes}/${ano}`;
+
+    document.getElementById("headline").textContent =
+      `¡Último día para ver este video es ${dataFormatada}!`;
+  </script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1808380623081732');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1808380623081732&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+<script>
+  window.pixelId = "683b3ed3b67da67997e52c5d";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+
+</body>
+</html>
