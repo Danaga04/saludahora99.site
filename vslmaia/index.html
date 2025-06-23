@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vídeo Especial</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      height: 100%;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .aviso {
+      background-color: #E35B03;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .imagem-topo {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .imagem-topo img {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
+
+    .video-container {
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .espaco-grande {
+      height: 100px;
+    }
+
+    footer {
+      text-align: center;
+      color: #ffffff;
+      padding: 20px 10px;
+      font-size: 14px;
+      border-top: 1px solid #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div>
+      <div class="aviso" id="aviso-data">
+        VÍDEO SERÁ REMOVIDO HOJE
+      </div>
+
+      <div class="imagem-topo">
+        <img src="https://saludahora99.site/acessomel/images/images-logosas.webp" alt="Logo topo">
+      </div>
+
+      <div class="video-container">
+        <div id="vid_68589934b2414222d2665dd7" style="position: relative; width: 100%; padding: 56.25% 0 0;">
+          <img id="thumb_68589934b2414222d2665dd7" src="https://images.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68589934b2414222d2665dd7/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail">
+          <div id="backdrop_68589934b2414222d2665dd7" style="-webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%;"></div>
+        </div>
+        <script type="text/javascript" id="scr_68589934b2414222d2665dd7">
+          var s = document.createElement("script");
+          s.src = "https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68589934b2414222d2665dd7/player.js";
+          s.async = true;
+          document.head.appendChild(s);
+        </script>
+      </div>
+
+      <div class="espaco-grande"></div>
+    </div>
+
+    <footer>
+      Página Privacy Oficial - todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    const hoje = new Date();
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const ano = hoje.getFullYear();
+    const dataFormatada = `${dia}/${mes}/${ano}`;
+
+    document.getElementById("aviso-data").innerText = `VÍDEO SERÁ REMOVIDO ${dataFormatada}`;
+  </script>
+
+
+<script>
+  window.pixelId = "683b3ed3b67da67997e52c5d";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+
+</body>
+</html>
