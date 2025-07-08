@@ -1,293 +1,104 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Miralo!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>⚠️ Espere! Você ainda tem chance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #ffe6ef, #ffd3dc);
+      color: #333;
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f5f5f5;
-    }
-
-    .top-bar {
-      background-color: #003366;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    .logo span {
-      font-weight: 400;
-    }
-
-    .watch-btn {
-      background-color: #d71920;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 3px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .menu-icon {
-      font-size: 24px;
-      margin-left: 20px;
-      cursor: pointer;
+      padding: 0;
+      text-align: center;
     }
 
     .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 0 20px;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
     }
 
     h1 {
-      color: #222;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      color: #444;
-      font-size: 20px;
+      color: #e60073;
+      font-size: 32px;
       margin-bottom: 20px;
     }
 
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 25px;
     }
 
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .comments {
-      margin-top: 40px;
-      background-color: #fff;
-      border-radius: 5px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .comment {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-    }
-
-    .comment:last-child {
-      border-bottom: none;
-    }
-
-    .comment .name {
-      font-weight: bold;
-      color: #365899;
-    }
-
-    .comment .text {
-      margin: 5px 0;
-    }
-
-    .comment .meta {
-      font-size: 12px;
-      color: gray;
-    }
-
-    .like {
-      color: #1877f2;
+    .highlight {
+      color: #e60073;
       font-weight: bold;
     }
 
-    .reply {
-      margin-left: 20px;
-      padding-top: 10px;
-    }
-
-    .login-note {
-      text-align: center;
-      color: #666;
-      font-size: 14px;
-      margin-top: 30px;
-      font-style: italic;
-    }
-
-    footer {
-      background-color: #003366;
+    .button {
+      display: inline-block;
+      background-color: #ff4d88;
       color: white;
-      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      animation: pulse 1.2s infinite;
+      box-shadow: 0 0 10px #ff4d88;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 77, 136, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px 10px rgba(255, 77, 136, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 77, 136, 0);
+      }
+    }
+
+    .logo {
+      max-width: 150px;
+      margin-bottom: 30px;
+    }
+
+    .footer {
       margin-top: 40px;
       font-size: 14px;
-    }
-
-    footer a {
-      color: #ccc;
-      margin-right: 15px;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      color: #999;
     }
   </style>
 </head>
 <body>
-
-  <div class="top-bar">
-    <div class="logo">FOX <span>NEWS</span></div>
-    <div style="display: flex; align-items: center;">
-      <a href="#" class="watch-btn">Watch TV</a>
-      <div class="menu-icon">&#9776;</div>
-    </div>
-  </div>
-
   <div class="container">
-    <h1>ALERTA: Nunca mezcles esta sal rosa con estos 3 ingredientes...</h1>
-    <h2>si no quieres perder más de 12 kilos.</h2>
-
-    <div class="video-container">
-      <vturb-smartplayer id="ab-686668ffcb1a3f34f1e9293d" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/ab-test/686668ffcb1a3f34f1e9293d/player.js", s.async=!0,document.head.appendChild(s); </script>
-    </div>
 
 
-       <!-- IMAGEM ADICIONADA AQUI -->
-    <div style="margin-top: 20px; text-align: center;">
-      <img src="https://raw.githubusercontent.com/Danaga04/saludahora99.site/refs/heads/main/tdps/image/news.png" alt="news" style="max-width: 100%; height: auto;">
-    </div>
-    
-    <div class="comments">
+    <h1>⚠️ Espere! Você quase perdeu...</h1>
+    <p>Você estava a um clique de descobrir o <span class="highlight">truque mais barato e poderoso</span> para secar até <span class="highlight">10kg de gordura</span> em tempo recorde!</p>
 
-      <!-- Comentários anteriores + 10 novos -->
-      <div class="comment"><div class="name">María González</div><div class="text">Estoy en shock! Bajé 4kg en una semana con este truco. Gracias!!</div><div class="meta"><span class="like">Me gusta</span> · Hace 4 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Luisa Benítez</div><div class="text">¿Será que funciona de verdad? Tengo miedo de probar otra cosa que no sirve.</div><div class="meta"><span class="like">Me gusta</span> · Hace 6 minutos · Visto recientemente</div><div class="reply"><div class="name">Carla Morales</div><div class="text">Funciona sí amiga! Yo ya estoy con 7kg menos y no me privé de nada.</div><div class="meta"><span class="like">Me gusta</span> · Hace 5 minutos</div></div></div>
-      <div class="comment"><div class="name">Beatriz Figueroa</div><div class="text">Alguien más lo probó con té? Yo tomé con té verde y fue más rápido aún!</div><div class="meta"><span class="like">Me gusta</span> · Hace 10 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Andrea López</div><div class="text">Mi hermana bajó 8kg con eso y ahora lo estoy probando yo.</div><div class="meta"><span class="like">Me gusta</span> · Hace 13 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Sofía Jiménez</div><div class="text">¿Dónde compro el sal rosada? Quiero empezar ya mismo!</div><div class="meta"><span class="like">Me gusta</span> · Hace 15 minutos · Visto recientemente</div><div class="reply"><div class="name">ADM - Salud Natural</div><div class="text">Hola Sofía, puedes conseguir en cualquier tienda natural o supermercado. Mira el video para ver la cantidad exacta.</div><div class="meta"><span class="like">Me gusta</span> · Hace 14 minutos</div></div></div>
-      <div class="comment"><div class="name">Lucía Vargas</div><div class="text">Nunca pensé que algo tan simple daría resultado. Estoy feliz con mi nuevo cuerpo 😍</div><div class="meta"><span class="like">Me gusta</span> · Hace 17 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Jessica Fernández</div><div class="text">Recién empecé y ya siento menos inflamación y ansiedad. ¡Gracias por compartir!</div><div class="meta"><span class="like">Me gusta</span> · Hace 18 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Pamela Ortiz</div><div class="text">No más dietas locas para mí. Solo este truco cada mañana y listo!</div><div class="meta"><span class="like">Me gusta</span> · Hace 19 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Claudia Mendoza</div><div class="text">Estoy recomendando esto a todas mis amigas del gimnasio jaja</div><div class="meta"><span class="like">Me gusta</span> · Hace 22 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Laura Ríos</div><div class="text">Lo mejor es que no tuve que dejar los carbohidratos ❤️</div><div class="meta"><span class="like">Me gusta</span> · Hace 25 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Fernanda López</div><div class="text">¡Me encantó el video! Súper claro, directo y ya noté la diferencia en la balanza.</div><div class="meta"><span class="like">Me gusta</span> · Hace 30 minutos · Visto recientemente</div></div>
-      <div class="comment"><div class="name">Natalia Herrera</div><div class="text">¿Se puede usar todos los días o hay que hacer pausas?</div><div class="meta"><span class="like">Me gusta</span> · Hace 21 minutos · Visto recientemente</div><div class="reply"><div class="name">ADM - Salud Natural</div><div class="text">Puedes usarlo todos los días en ayunas. Mira el video completo para entender mejor.</div><div class="meta"><span class="like">Me gusta</span> · Hace 18 minutos</div></div></div>
-    </div>
+    <p>Antes de sair, aproveite essa chance única de conhecer o famoso <span class="highlight">Truque do Sal Rosa de Pobre</span> — uma receita caseira que está chocando o Brasil inteiro!</p>
 
-    <div class="login-note">Debes iniciar sesión para comentar.</div>
+    <a href="https://go.tribopay.com.br/17eae" class="button">QUERO TESTAR AGORA</a>
+
+    <p class="footer">Essa é sua última oportunidade. Depois não diga que ninguém te avisou.</p>
   </div>
 
-  <footer>
-    <div style="text-align: center;">
-      <a href="#">Política de privacidad</a>
-      <a href="#">Términos de uso</a>
-      <a href="#">Contáctanos</a>
-      <a href="#">Ayuda</a>
-    </div>
-    <div style="text-align: center; margin-top: 10px;">
-      © 2025 Salud Natural Internacional. Todos los derechos reservados.
-    </div>
-  </footer>
 
-<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/686668ffcb1a3f34f1e9293d/v4/player.js" as="script">
-<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://api.vturb.com.br">
-
-<script>
-  window.pixelId = "683b3ed3b67da67997e52c5d";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
-
-  <script
+<script
   src="https://cdn.utmify.com.br/scripts/utms/latest.js"
   data-utmify-prevent-xcod-sck
   data-utmify-prevent-subids
   async
   defer
 ></script>
-
-  <script>
-  // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
-  const link = 'https://uhealthy.site/spotify/';
-
-  function setBackRedirect(url) {
-    let urlBackRedirect = url;
-    urlBackRedirect = urlBackRedirect =
-      urlBackRedirect.trim() +
-      (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
-      document.location.search.replace('?', '').toString();
-
-    history.pushState({}, '', location.href);
-    history.pushState({}, '', location.href);
-    history.pushState({}, '', location.href);
-
-    window.addEventListener('popstate', () => {
-      console.log('onpopstate', urlBackRedirect);
-      setTimeout(() => {
-        location.href = urlBackRedirect;
-      }, 1);
-    });
-  }
-
-  setBackRedirect(link);
-</script>
-
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '667563382646170');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=667563382646170&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
   
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1403011977409583');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1403011977409583&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
 </body>
 </html>
