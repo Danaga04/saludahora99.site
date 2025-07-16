@@ -516,9 +516,16 @@
                 <li>🎁 SOS Piernas Pesadas - Alivio Inmediato</li>
                 <li>🎁 Garantía de 7 días sin preguntas</li>
             </ul>
-            <button class="btn-next" onclick="finalStep()" style="background: #ff6b6b; font-size: 18px; padding: 20px 40px;">¡SÍ, QUIERO ACELERAR MIS RESULTADOS!</button>
-            <div style="margin-top: 20px;">
-                <button class="btn-next" onclick="finalStep()" style="background: #666; font-size: 14px; padding: 10px 20px;">No, solo quiero el protocolo básico</button>
+          <!-- HOTMART - Sales Funnel Widget -->
+<!--- sales funnel container --->
+<div id="hotmart-sales-funnel"></div>
+
+<!--- script load and setup --->
+<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+<script>
+checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+</script>
+<!-- HOTMART - Sales Funnel Widget -->
             </div>
         </div>
 
