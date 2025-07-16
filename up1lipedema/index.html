@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Personalizado - Protocolo Anti-Lipedema</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .step {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-counter {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .option:hover {
+            border-color: #4ecdc4;
+            background: #f0fdfc;
+        }
+
+        .option.selected {
+            border-color: #4ecdc4;
+            background: #e6fffa;
+        }
+
+        .option-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .option-desc {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .ingredient-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .ingredient-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ingredient-card:hover {
+            border-color: #4ecdc4;
+            background: #f0fdfc;
+        }
+
+        .ingredient-card.selected {
+            border-color: #4ecdc4;
+            background: #e6fffa;
+        }
+
+        .ingredient-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quantity-btn {
+            background: #4ecdc4;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-display {
+            font-weight: bold;
+            min-width: 40px;
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4ecdc4;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .confirmation-card {
+            background: #e6fffa;
+            border: 2px solid #4ecdc4;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .result-summary {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .highlight {
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #856404;
+        }
+
+        .final-offer {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .price-original {
+            text-decoration: line-through;
+            color: #ffcccc;
+            font-size: 18px;
+        }
+
+        .price-offer {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .urgency-timer {
+            background: #333;
+            color: #ff6b6b;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Paso 1: Introducción -->
+        <div class="step active" id="step1">
+            <div class="step-counter">Paso 1 de 12</div>
+            <h2>¡Felicidades! Estás a punto de acceder a tu Protocolo Clínico Anti-Lipedema personalizado</h2>
+            <div class="subtitle">Para crear tu protocolo específico, necesitamos conocer mejor tu situación actual. Esto nos ayudará a personalizar completamente tu tratamiento.</div>
+            <button class="btn-next" onclick="nextStep()">Comenzar Evaluación Personalizada</button>
+        </div>
+
+        <!-- Paso 2: Nivel de Lipedema -->
+        <div class="step" id="step2">
+            <div class="step-counter">Paso 2 de 12</div>
+            <h2>¿Cuál es tu nivel actual de lipedema?</h2>
+            <div class="subtitle">Selecciona la opción que mejor describe tu situación actual:</div>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'nivel1')">
+                    <div class="option-title">Nivel 1 - Inicial</div>
+                    <div class="option-desc">Hinchazón leve, principalmente en tobillos y pantorrillas</div>
+                </div>
+                <div class="option" onclick="selectOption(this, 'nivel2')">
+                    <div class="option-title">Nivel 2 - Moderado</div>
+                    <div class="option-desc">Hinchazón notable hasta las rodillas, dolor ocasional</div>
+                </div>
+                <div class="option" onclick="selectOption(this, 'nivel3')">
+                    <div class="option-title">Nivel 3 - Avanzado</div>
+                    <div class="option-desc">Hinchazón severa, dolor constante, dificultad para caminar</div>
+                </div>
+            </div>
+            <button class="btn-next" onclick="nextStep()" disabled>Continuar</button>
+        </div>
+
+        <!-- Paso 3: Tiempo con el problema -->
+        <div class="step" id="step3">
+            <div class="step-counter">Paso 3 de 12</div>
+            <h2>¿Hace cuánto tiempo experimentas estos síntomas?</h2>
+            <div class="subtitle">Esta información nos ayuda a determinar la intensidad del protocolo:</div>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'tiempo1')">
+                    <div class="option-title">Menos de 6 meses</div>
+                    <div class="option-desc">Síntomas recientes, protocolo de prevención</div>
+                </div>
+                <div class="option" onclick="selectOption(this, 'tiempo2')">
+                    <div class="option-title">6 meses a 2 años</div>
+                    <div class="option-desc">Síntomas establecidos, protocolo intensivo</div>
+                </div>
+                <div class="option" onclick="selectOption(this, 'tiempo3')">
+                    <div class="option-title">Más de 2 años</div>
+                    <div class="option-desc">Síntomas crónicos, protocolo completo avanzado</div>
+                </div>
+            </div>
+            <button class="btn-next" onclick="nextStep()" disabled>Continuar</button>
+        </div>
+
+        <!-- Paso 4: Síntomas adicionales -->
+        <div class="step" id="step4">
+            <div class="step-counter">Paso 4 de 12</div>
+            <h2>¿Cuáles de estos síntomas experimentas también?</h2>
+            <div class="subtitle">Selecciona todos los que apliquen (puedes elegir varios):</div>
+            <div class="options">
+                <div class="option" onclick="selectMultipleOption(this, 'celulitis')">
+                    <div class="option-title">✓ Celulitis visible</div>
+                    <div class="option-desc">Piel con aspecto de "piel de naranja"</div>
+                </div>
+                <div class="option" onclick="selectMultipleOption(this, 'flacidez')">
+                    <div class="option-title">✓ Flacidez en la piel</div>
+                    <div class="option-desc">Piel suelta, especialmente en muslos</div>
+                </div>
+                <div class="option" onclick="selectMultipleOption(this, 'dolor')">
+                    <div class="option-title">✓ Dolor al tacto</div>
+                    <div class="option-desc">Sensibilidad y dolor al presionar las piernas</div>
+                </div>
+                <div class="option" onclick="selectMultipleOption(this, 'pesadez')">
+                    <div class="option-title">✓ Sensación de pesadez</div>
+                    <div class="option-desc">Piernas pesadas, especialmente por la noche</div>
+                </div>
+            </div>
+            <button class="btn-next" onclick="nextStep()">Continuar</button>
+        </div>
+
+        <!-- Paso 5: Procesando información -->
+        <div class="step" id="step5">
+            <div class="loading active">
+                <div class="spinner"></div>
+                <h2>Analizando tu perfil...</h2>
+                <div class="subtitle">Estamos procesando tus respuestas para crear tu protocolo personalizado</div>
+            </div>
+        </div>
+
+        <!-- Paso 6: Confirmación personalizada -->
+        <div class="step" id="step6">
+            <div class="step-counter">Paso 5 de 12</div>
+            <h2>Perfil Personalizado Creado</h2>
+            <div class="confirmation-card">
+                <h3>Tu protocolo ha sido personalizado basado en:</h3>
+                <ul style="text-align: left; margin-top: 10px;">
+                    <li>• Nivel de lipedema: <span class="highlight" id="selectedLevel"></span></li>
+                    <li>• Tiempo con síntomas: <span class="highlight" id="selectedTime"></span></li>
+                    <li>• Síntomas adicionales: <span class="highlight" id="selectedSymptoms"></span></li>
+                </ul>
+            </div>
+            <div class="subtitle">Ahora vamos a personalizar tu fórmula anti-inflamatoria específica</div>
+            <button class="btn-next" onclick="nextStep()">Continuar con la Fórmula</button>
+        </div>
+
+        <!-- Paso 7: Selección de cúrcuma -->
+        <div class="step" id="step7">
+            <div class="step-counter">Paso 6 de 12</div>
+            <h2>Selecciona la cantidad correcta de Cúrcuma</h2>
+            <div class="subtitle">Basado en tu perfil, necesitas una dosis específica de cúrcuma para máximos resultados anti-inflamatorios:</div>
+            <div class="ingredient-selector">
+                <div class="ingredient-card" onclick="selectIngredient(this, 'curcuma', '1/2 cucharadita')">
+                    <div class="ingredient-icon">🟡</div>
+                    <div class="option-title">1/2 Cucharadita</div>
+                    <div class="option-desc">Dosis suave</div>
+                </div>
+                <div class="ingredient-card" onclick="selectIngredient(this, 'curcuma', '1 cucharadita')">
+                    <div class="ingredient-icon">🟡</div>
+                    <div class="option-title">1 Cucharadita</div>
+                    <div class="option-desc">Dosis recomendada</div>
+                </div>
+                <div class="ingredient-card" onclick="selectIngredient(this, 'curcuma', '1.5 cucharaditas')">
+                    <div class="ingredient-icon">🟡</div>
+                    <div class="option-title">1.5 Cucharaditas</div>
+                    <div class="option-desc">Dosis intensiva</div>
+                </div>
+            </div>
+            <button class="btn-next" onclick="nextStep()" disabled>Continuar</button>
+        </div>
+
+        <!-- Paso 8: Selección de limón -->
+        <div class="step" id="step8">
+            <div class="step-counter">Paso 7 de 12</div>
+            <h2>Selecciona la cantidad correcta de Limón</h2>
+            <div class="subtitle">El limón potencia la absorción de la cúrcuma. Selecciona la cantidad adecuada:</div>
+            <div class="ingredient-selector">
+                <div class="ingredient-card" onclick="selectIngredient(this, 'limon', '1/2 limón')">
+                    <div class="ingredient-icon">🍋</div>
+                    <div class="option-title">1/2 Limón</div>
+                    <div class="option-desc">Dosis básica</div>
+                </div>
+                <div class="ingredient-card" onclick="selectIngredient(this, 'limon', '1 limón completo')">
+                    <div class="ingredient-icon">🍋</div>
+                    <div class="option-title">1 Limón Completo</div>
+                    <div class="option-desc">Dosis óptima</div>
+                </div>
+                <div class="ingredient-card" onclick="selectIngredient(this, 'limon', '1.5 limones')">
+                    <div class="ingredient-icon">🍋</div>
+                    <div class="option-title">1.5 Limones</div>
+                    <div class="option-desc">Dosis máxima</div>
+                </div>
+            </div>
+            <button class="btn-next" onclick="nextStep()" disabled>Continuar</button>
+        </div>
+
+        <!-- Paso 9: Procesando fórmula -->
+        <div class="step" id="step9">
+            <div class="loading active">
+                <div class="spinner"></div>
+                <h2>Calculando tu fórmula personalizada...</h2>
+                <div class="subtitle">Estamos ajustando las cantidades exactas para tu perfil específico</div>
+            </div>
+        </div>
+
+        <!-- Paso 10: Momento crítico -->
+        <div class="step" id="step10">
+            <div class="step-counter">Paso 8 de 12</div>
+            <h2>¡Momento Crítico Detectado!</h2>
+            <div class="warning">
+                <strong>⚠️ ATENCIÓN:</strong> Tu perfil indica que necesitas resultados más rápidos de lo normal. Las mujeres con tu nivel de lipedema que solo usan el protocolo básico pueden tardar hasta 60 días más en ver resultados visibles.
+            </div>
+            <div class="subtitle">Para acelerar tu proceso de recuperación, nuestro sistema detectó que necesitas el protocolo nocturno complementario que usan las mujeres europeas.</div>
+            <button class="btn-next" onclick="nextStep()">Ver Protocolo Acelerado</button>
+        </div>
+
+        <!-- Paso 11: Revelación del protocolo nocturno -->
+        <div class="step" id="step11">
+            <div class="step-counter">Paso 9 de 12</div>
+            <h2>Protocolo Nocturno Personalizado Disponible</h2>
+            <div class="subtitle">Basado en tu perfil, tienes acceso al "Plan Turbo de Remodelación Linfática + Piel Lisa"</div>
+            <div class="result-summary">
+                <h3>Tu protocolo nocturno incluye:</h3>
+                <ul style="text-align: left; margin-top: 10px;">
+                    <li>✓ Fórmula Nocturna Anti-Inflamatoria personalizada</li>
+                    <li>✓ Mapa de Masaje de 3 minutos para tu nivel</li>
+                    <li>✓ Rutina de Alongamientos Nocturnos específica</li>
+                    <li>✓ Guía "Piel de Seda" para celulitis y flacidez</li>
+                </ul>
+            </div>
+            <div class="warning">
+                <strong>Importante:</strong> Este protocolo acelera los resultados en un 70% y es especialmente efectivo para mujeres con tu perfil específico.
+            </div>
+            <button class="btn-next" onclick="nextStep()">Ver Oferta Especial</button>
+        </div>
+
+        <!-- Paso 12: Oferta final -->
+        <div class="step" id="step12">
+            <div class="step-counter">Paso 10 de 12</div>
+            <h2>Oferta Especial Solo Para Ti</h2>
+            <div class="final-offer">
+                <h3>🎁 OFERTA EXCLUSIVA - Solo durante esta evaluación</h3>
+                <div class="price-original">Precio normal: $97 USD</div>
+                <div class="price-offer">Tu precio especial: $27 USD</div>
+                <div class="urgency-timer">⏰ Esta oferta expira en 15 minutos</div>
+            </div>
+            <div class="subtitle">Incluye GRATIS:</div>
+            <ul style="text-align: left; margin: 20px 0;">
+                <li>🎁 Ritual de Detox Linfático de 24 Horas</li>
+                <li>🎁 SOS Piernas Pesadas - Alivio Inmediato</li>
+                <li>🎁 Garantía de 7 días sin preguntas</li>
+            </ul>
+            <button class="btn-next" onclick="finalStep()" style="background: #ff6b6b; font-size: 18px; padding: 20px 40px;">¡SÍ, QUIERO ACELERAR MIS RESULTADOS!</button>
+            <div style="margin-top: 20px;">
+                <button class="btn-next" onclick="finalStep()" style="background: #666; font-size: 14px; padding: 10px 20px;">No, solo quiero el protocolo básico</button>
+            </div>
+        </div>
+
+        <!-- Paso final -->
+        <div class="step" id="stepFinal">
+            <div class="loading active">
+                <div class="spinner"></div>
+                <h2>Procesando tu pedido...</h2>
+                <div class="subtitle">Estamos preparando tu protocolo personalizado completo</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        let selectedAnswers = {};
+        let selectedIngredients = {};
+        let selectedSymptoms = [];
+
+        function updateProgress() {
+            const totalSteps = 12;
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function nextStep() {
+            if (currentStep === 4) {
+                // Después del paso 4, ir al loading (paso 5)
+                currentStep = 5;
+                showStep(currentStep);
+                updateProgress();
+                // Después de 2 segundos, ir al paso 6
+                setTimeout(() => {
+                    currentStep = 6;
+                    showStep(currentStep);
+                    updateProgress();
+                }, 2000);
+            } else if (currentStep === 8) {
+                // Después del paso 8, ir al loading (paso 9)
+                currentStep = 9;
+                showStep(currentStep);
+                updateProgress();
+                // Después de 2 segundos, ir al paso 10
+                setTimeout(() => {
+                    currentStep = 10;
+                    showStep(currentStep);
+                    updateProgress();
+                }, 2000);
+            } else if (currentStep === 12) {
+                // Después del paso 12, ir al loading final
+                currentStep = 'Final';
+                showStep('Final');
+                // Después de 3 segundos, mostrar alert
+                setTimeout(() => {
+                    alert('¡Protocolo personalizado creado! Serás redirigida a la página de pago.');
+                }, 3000);
+            } else {
+                currentStep++;
+                showStep(currentStep);
+                updateProgress();
+            }
+        }
+
+        function showStep(step) {
+            // Ocultar todos los pasos
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            
+            // Mostrar paso actual
+            document.getElementById('step' + step).classList.add('active');
+            
+            // Actualizar información personalizada en paso 6
+            if (step === 6) {
+                updatePersonalizedInfo();
+            }
+        }
+
+        function selectOption(element, value) {
+            // Remover selección anterior
+            element.parentNode.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            
+            // Seleccionar nueva opción
+            element.classList.add('selected');
+            selectedAnswers[currentStep] = value;
+            
+            // Habilitar botón siguiente
+            document.querySelector('.step.active .btn-next').disabled = false;
+        }
+
+        function selectMultipleOption(element, value) {
+            element.classList.toggle('selected');
+            
+            if (element.classList.contains('selected')) {
+                selectedSymptoms.push(value);
+            } else {
+                selectedSymptoms = selectedSymptoms.filter(s => s !== value);
+            }
+            
+            selectedAnswers[currentStep] = selectedSymptoms;
+        }
+
+        function selectIngredient(element, ingredient, quantity) {
+            // Remover selección anterior
+            element.parentNode.querySelectorAll('.ingredient-card').forEach(card => card.classList.remove('selected'));
+            
+            // Seleccionar nueva opción
+            element.classList.add('selected');
+            selectedIngredients[ingredient] = quantity;
+            
+            // Habilitar botón siguiente
+            document.querySelector('.step.active .btn-next').disabled = false;
+        }
+
+        function updatePersonalizedInfo() {
+            const levelTexts = {
+                'nivel1': 'Inicial',
+                'nivel2': 'Moderado',
+                'nivel3': 'Avanzado'
+            };
+            
+            const timeTexts = {
+                'tiempo1': 'Menos de 6 meses',
+                'tiempo2': '6 meses a 2 años',
+                'tiempo3': 'Más de 2 años'
+            };
+            
+            const symptomTexts = {
+                'celulitis': 'Celulitis',
+                'flacidez': 'Flacidez',
+                'dolor': 'Dolor al tacto',
+                'pesadez': 'Pesadez'
+            };
+            
+            document.getElementById('selectedLevel').textContent = levelTexts[selectedAnswers[2]] || 'No especificado';
+            document.getElementById('selectedTime').textContent = timeTexts[selectedAnswers[3]] || 'No especificado';
+            
+            let symptomsText = selectedSymptoms.map(s => symptomTexts[s]).join(', ');
+            document.getElementById('selectedSymptoms').textContent = symptomsText || 'Ninguno seleccionado';
+        }
+
+        function finalStep() {
+            currentStep = 'Final';
+            showStep('Final');
+            
+            // Simular procesamiento y redirección
+            setTimeout(() => {
+                alert('¡Protocolo personalizado creado! Serás redirigida a la página de pago.');
+                // Aquí iría la redirección real
+            }, 3000);
+        }
+
+        // Inicializar
+        updateProgress();
+        
+        // Timer countdown para crear urgencia
+        let timeLeft = 15 * 60; // 15 minutos en segundos
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            const timerElements = document.querySelectorAll('.urgency-timer');
+            timerElements.forEach(el => {
+                el.innerHTML = `⏰ Esta oferta expira en ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            });
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        updateTimer();
+    </script>
+
+
+</body>
+</html>
