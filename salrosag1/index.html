@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícia Especial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background-color: #c4170c;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .section-politica {
+      background-color: #c4170c;
+      color: white;
+      font-weight: bold;
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">g1</div>
+    <div class="menu-icon">&#9776;</div>
+  </header>
+
+  <div class="section-politica">POLÍTICA</div>
+
+  <div class="container">
+
+    <!-- VTurb Player -->
+    <div style="margin: 20px 0;">
+      <vturb-smartplayer id="vid-68794bb6b5cb8264b274665e" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
+      <script type="text/javascript">
+        var s = document.createElement("script");
+        s.src = "https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68794bb6b5cb8264b274665e/v4/player.js";
+        s.async = true;
+        document.head.appendChild(s);
+      </script>
+    </div>
+
+  </div>
+
+</body>
+</html>
